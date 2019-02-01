@@ -1,0 +1,55 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.container {
+  background: $main-white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: $navigation-height;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: $main-content-width;
+    height: 100%;
+  }
+}
+
+.productNavIcon {
+  align-items: center;
+  border-radius: $full-radius;
+  cursor: pointer;
+  display: flex;
+  height: calc(#{$navigation-height} - 2 * #{$space-secondary});
+  justify-content: center;
+  width: calc(#{$navigation-height} - 2 * #{$space-secondary});
+
+  &:hover {
+    background: darken($main-gray, 10%);
+  }
+
+  svg {
+    fill: $dark-gray;
+    height: 48px;
+    width: 48px;
+  }
+
+  &.open {
+    position: absolute;
+    left: $space-secondary;
+
+    svg {
+      fill: darken($main-gray, 5%);
+    }
+
+    &:hover {
+      background: lighten($main-gray, 2%);
+    }
+  }
+
+}

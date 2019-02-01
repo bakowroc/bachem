@@ -1,0 +1,14 @@
+{
+  "main_text": {
+    "colored": "Hello!",
+    "text": "I'm here to help"
+  },
+  "sub_text": "My solutions to achieve your goals",
+  "button": {
+    "text": "See my offer",
+    "href": ""
+  },
+  "me_text": "Johhny Cash",
+  "me_subtext": "Professional photographer",
+  "img_src": "https://www.abc.net.au/news/image/9667872-3x2-700x467.jpg"
+}

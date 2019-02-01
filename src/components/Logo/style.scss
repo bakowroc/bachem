@@ -1,0 +1,19 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  .text {
+    color: $main-blue;
+    font-size: 1.3em;
+    font-weight: 500;
+
+    &:first-letter {
+      background: $main-blue;
+      color: $main-white;
+      padding-left: $space-secondary
+    }
+  }
+}

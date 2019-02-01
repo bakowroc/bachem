@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.navigation {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: $main-gray;
+  padding: $space-primary;
+
+  .mainMenu {
+    list-style: none;
+    display: flex;
+
+    .menuItem {
+      margin: 0 $space-secondary;
+      font-weight: 500;
+      font-size: .95em;
+
+      a {
+        color: $dark-gray;
+        text-decoration: none;
+        padding: $space-secondary;
+
+        &:hover {
+          color: $main-blue;
+          border-radius: $primary-radius;
+        }
+      }
+    }
+  }
+}

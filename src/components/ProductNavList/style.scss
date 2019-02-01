@@ -1,0 +1,72 @@
+@import "../../styles/colors";
+@import "../../styles/sizes";
+
+.container {
+  transform: translateX(-100%);
+  transition: transform .2s ease;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: calc((100vw - #{$main-content-width}) /2 - #{$space-primary});
+  background: $main-gray;
+
+  &.show {
+    transform: translateX(0);
+    transition: transform .2s ease;
+  }
+
+  .header {
+    background: darken($main-gray, 5%);
+    height: $navigation-height;
+    padding: $space-secondary;
+  }
+
+  .productListNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $space-primary;
+    height: calc(100% - #{$navigation-height});
+
+    .productList {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin-bottom: 2 * $space-primary;
+
+      h2 {
+        color: $dark-gray;
+        font-size: 1.1em;
+        font-weight: 500;
+        padding-left: $space-secondary;
+        margin-bottom: $space-secondary;
+      }
+      li {
+
+        a {
+          color: $dark-gray;
+          display: block;
+          font-size: .95em;
+          text-decoration: none;
+          padding: $space-secondary + 5 $space-secondary;
+
+          &:hover {
+            background: darken($main-gray, 5%);
+            color: $main-blue;
+          }
+
+          &.active {
+            background: darken($main-gray, 5%);
+            color: $main-blue;
+          }
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+}

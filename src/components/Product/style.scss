@@ -1,0 +1,107 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+.container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: $navigation-height;
+  height: calc(100vh - #{$navigation-height});
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  .product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: $main-content-width;
+    margin-top: $space-primary;
+
+    .info {
+      padding: $space-primary;
+      width: calc(#{$main-content-width} - 350px - #{$space-primary});
+
+      .heading {
+        color: $dark-gray;
+        font-size: 2em;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: $space-primary * 2;
+
+        &:first-letter {
+          background: $dark-gray;
+          color: $main-white;
+          padding-left: $space-secondary;
+        }
+      }
+
+      .description {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-bottom: $space-primary * 4;
+
+        .text {
+          color: $dark-gray;
+          line-height: 1.5;
+          text-align: justify;
+
+        }
+      }
+
+      .photos {
+        display: inline;
+
+        .photo {
+          float: left;
+          height: 200px;
+          width: 200px;
+          margin-right: $space-primary;
+          margin-bottom: $space-primary;
+          overflow: hidden;
+          background: radial-gradient($main-white, $main-blue);
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          img {
+            opacity: .7;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .features {
+      background: $main-blue;
+      width: 350px;
+      height: 450px;
+      padding: $space-primary * 2;
+      margin-top: $space-primary;
+
+      .featuresList {
+        list-style: none;
+        margin-bottom: $space-primary * 2;
+
+        .feature {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          color: $main-white;
+          font-size: 1.3em;
+          margin-bottom: $space-primary;
+
+          .featureIcon {
+            margin-right: $space-primary;
+
+            svg {
+              fill: $main-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
