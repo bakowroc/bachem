@@ -5,7 +5,7 @@ export const Icon = ({name, className = '', onClick = null}) => {
   const getSvg = () => {
     try {
       return eva.icons[name];
-    } catch {
+    } catch(err) {
       return eva.icons['github'];
     }
   };

@@ -2,36 +2,43 @@ import {h, Component} from 'preact';
 import { Link } from 'preact-router/Match';
 
 import {Paper} from "../Paper/Paper";
-import {Button} from "../Button/Button";
 import {Icon} from "../Icon/Icon";
 
 import * as headerStyle from '../Header/style.scss';
 import * as style from './style.scss';
+import {ProductRoute} from "../Product/ProductContent";
 
 export const PRODUCTS_ITEMS = [
-  {display: 'Tabliczki znamionowe', href: "tabliczki-znamionowe"},
-  {display: 'Tabliczki firmowe', href: "tabliczki-firmowe"},
-  {display: 'Tabliczki fabryczne', href: "tabliczki-fabryczne"},
-  {display: 'Panele sterownicze', href: "panele-sterownicze"},
-  {display: 'Tablice czołowe maszyn', href: "tablice-czolowe-maszyn"},
-  {display: 'Skale, liniały, schematy', href: "skale-linialy-schematy"},
-  {display: 'Tabliczki różnego typu', href: "tabliczki-rozne"},
-  {display: 'Tablice informacyjne', href: "tablice-informacyjne"},
-  {display: 'Wywieszki i etykiety', href: "wyeiszki-i-etykiety"},
-  {display: 'Numeratory', href: "numeratory"},
+  {display: 'Tabliczki znamionowe', href: ProductRoute.TABLICZKI_ZNAMIONOWE},
+  {display: 'Tabliczki firmowe', href: ProductRoute.TABLICZKI_FIRMOWE},
+  {display: 'Tabliczki fabryczne', href: ProductRoute.TABLICZKI_FABRYCZNE},
+  {display: 'Panele sterownicze', href: ProductRoute.PANELE_STEROWNICZE},
+  {display: 'Tablice czołowe maszyn', href: ProductRoute.TABLICE_CZOLOWE_MASZYN},
+  {display: 'Skale, liniały, schematy', href: ProductRoute.SKALE_LINIALY_SCHEMATY},
+  {display: 'Tabliczki różnego typu', href: ProductRoute.TABLICZKI_ROZNE},
+  {display: 'Tablice informacyjne', href: ProductRoute.TABLICE_INFORMACYJNE},
+  {display: 'Wywieszki i etykiety', href: ProductRoute.WYWIESZKI_ETYKIETY},
+  {display: 'Numeratory', href: ProductRoute.NUMERATORY}
 ];
 
 export class ProductNavList extends Component {
   renderHeader = (onClose) => (
     <header className={style.header}>
-      <Icon name="close-outline" onClick={onClose} className={headerStyle.productNavIcon}/>
+      <Icon name="close-outline" onClick={onClose} className={`${headerStyle.productNavIcon} ${style.navIcon}`}/>
     </header>
   );
 
   renderList = (heading, items) => (
     <ul className={style.productList}>
-      <h2>{heading}</h2>
-      {items.map(item => <li><Link activeClassName={style.active} href={`/${item.href}`}>{item.display}</Link></li>)}
+     <h2>{heading}</h2>
+      {items.map(item =>
+        <li>
+          <Link activeClassName={style.active} href={`/produkty/${item.href}`}>
+            <Icon name="arrow-forward-outline" className={style.icon}/>
+            {item.display}
+          </Link>
+        </li>
+      )}
     </ul>
   );
 
@@ -41,7 +48,6 @@ export class ProductNavList extends Component {
         {this.renderHeader(onClose)}
         <nav className={style.productListNav}>
           {this.renderList("Produkty", PRODUCTS_ITEMS)}
-          <Button onClick={null} text="Pelna oferta" className={style.button}/>
         </nav>
       </Paper>
     )

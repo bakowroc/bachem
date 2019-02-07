@@ -14,20 +14,20 @@ export class Header extends Component {
   };
 
   componentDidUpdate(nextProps) {
-    if(nextProps.isPageScrolled !== this.props.isPageScrolled) {
+    if(nextProps.isAppScrolled !== this.props.isAppScrolled) {
       this.setState({isCloseRequested: false});
     }
   }
 
   onProductNavToggle = () => this.setState(state => ({isCloseRequested: !state.isCloseRequested}));
   shouldNavListShown = () => {
-    if (!this.props.isPageScrolled) {
+    if (!this.props.isAppScrolled) {
       return this.state.isCloseRequested;
-    } else if(this.state.isCloseRequested && this.props.isPageScrolled) {
+    } else if(this.state.isCloseRequested && this.props.isAppScrolled) {
       return !this.state.isCloseRequested;
     }
 
-    return this.props.isPageScrolled;
+    return this.props.isAppScrolled;
   };
 
   render({isAppScrolled}, {}, {}) {

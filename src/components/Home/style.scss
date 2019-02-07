@@ -1,8 +1,6 @@
 @import '../../styles/sizes';
+@import '../../styles/mixins';
 
 .home {
-  overflow-y: auto;
-  overflow-x: hidden;
-  margin-top: $navigation-height;
-  height: calc(100vh - #{$navigation-height});
+  display: block;
 }

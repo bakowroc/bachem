@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const config = require('./config/template.json');
-
 module.exports = {
   entry: './src/index.jsx',
   mode: 'none',
@@ -53,7 +51,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "Bachem - tabliczki znamionowe",
-      template: "src/index.ejs",
+      template: "./src/index.ejs",
       filename: path.resolve(__dirname, 'build/index.html'),
     })
   ]

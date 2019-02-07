@@ -1,0 +1,76 @@
+@import 'colors';
+
+//Transitions
+@mixin fade-in($time-in) {
+  opacity: 1;
+  transition: all #{$time-in}s ease;
+  visibility: visible;
+}
+
+@mixin fade-out($time-out) {
+  opacity: 0;
+  transition: all #{$time-out}s ease;
+  visibility: hidden;
+}
+
+@mixin scale-out($time-out, $scale-value: 0) {
+  @include fade-out($time-out);
+  transform: scale($scale-value);
+}
+
+@mixin scale-in($time-in, $scale-value: 1) {
+  @include fade-in($time-in);
+  transform: scale($scale-value);
+}
+
+@mixin translate-y-out($time-out, $y-value: -100%) {
+  @include fade-out($time-out);
+  transform: translateY($y-value);
+}
+
+@mixin translate-x-in($time-in, $y-value: 0) {
+  @include fade-in($time-in);
+  transform: translateX($y-value);
+}
+
+@mixin translate-x-out($time-out, $y-value: -100%) {
+  @include fade-out($time-out);
+  transform: translateX($y-value);
+}
+
+@mixin translate-y-in($time-in, $y-value: 0) {
+  @include fade-in($time-in);
+  transform: translateY($y-value);
+}
+
+//Flexbox
+@mixin flex-common($align-items: center, $justify-content: center, $direction: column, $width: 100%) {
+  align-items: $align-items;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  width: $width;
+}
+
+@mixin container() {
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+
+// Buttons
+@mixin flat-button($color: $primary-contrast-text) {
+  background: none;
+  box-shadow: none;
+  color: $color;
+}
+
+@mixin disabled-button($color, $background) {
+  background: darken($background, 10%);
+  color: rgba($color, .5);
+}

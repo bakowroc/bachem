@@ -1,0 +1,46 @@
+@import "../../styles/colors";
+@import "../../styles/sizes";
+
+.container {
+  position: relative;
+  width: 100%;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .label {
+      color: darken($main-gray, 35%);
+      font-size: .85em;
+      margin-bottom: $space-secondary;
+    }
+
+    .input, .textarea {
+      border: 1px solid darken($main-gray, 5%);
+      border-radius: $primary-radius;
+      padding: $space-secondary + 5;
+      margin-bottom: $space-primary;
+    }
+
+    .textarea {
+      height: 350px;
+      resize: none;
+    }
+
+    .submitButton {
+      margin-left: auto;
+      width: 250px;
+
+      &.success {
+       background: $green;
+      }
+
+      .icon {
+        svg {
+          fill: $main-white;
+        }
+      }
+    }
+  }
+}

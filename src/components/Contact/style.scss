@@ -1,0 +1,64 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/sizes';
+
+.container {
+  @include container;
+  background: lighten($main-gray, 4%);
+
+  .circleShape {
+    border-radius: 40%;
+    position: absolute;
+    background: $main-gray;
+    width: 120vw;
+    height: 70vh;
+    top: -50vh;
+    right: -15vw;
+    transform: rotate(-10deg);
+    z-index: 0;
+  }
+
+  .contact {
+    padding: $space-primary * 4 $space-primary * 2;
+    width: $main-content-width;
+    z-index: 1;
+
+    .infoBox {
+      display: flex;
+      flex-direction: row;
+      background: $main-white;
+      overflow: hidden;
+      height: 720px;
+      width: 100%;
+
+      .content {
+        border-right: 1px solid darken($main-gray, 5%);
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+        padding: $space-primary * 2;
+        width: calc(#{$main-content-width} / 3);
+
+        .contentSection {
+
+          .heading {
+            color: $dark-gray;
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-bottom: $space-primary;
+          }
+
+          .text {
+            color: darken($main-gray, 35%);
+            margin-bottom: $space-secondary;
+          }
+        }
+      }
+
+      .contactForm {
+        padding: $space-primary * 2;
+      }
+    }
+  }
+}

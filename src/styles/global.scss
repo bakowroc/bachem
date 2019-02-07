@@ -8,8 +8,6 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -17,9 +15,5 @@ body {
   background: $main-white;
   font-family: 'Roboto', 'sans-serif';
   font-size: 16px;
-}
-
-.globalWrapper {
-  width: $main-content-width;
 }
 

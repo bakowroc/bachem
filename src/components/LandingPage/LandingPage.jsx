@@ -1,19 +1,28 @@
 import {h} from 'preact';
 
-import * as style from './style.scss';
+
+import * as lorem from 'lorem-ipsum';
 import {LandingPageBackground} from "../LandingPageBackground/LandingPageBackground";
 import {Button} from "../Button/Button";
 import {PlatesMock} from "../PlatesMock/PlatesMock";
+
+import * as style from './style.scss';
+
+const company = {
+  slogan: "Tabliczki znamionowe i firmowe.",
+  brief: "Nasza siedziba znajduje sie we Wroclawiu. Wytwarzamy produkty dla klientow z calej Europy."
+};
 
 export const LandingPage = () => (
   <div className={style.container}>
     <LandingPageBackground/>
     <main className={style.landingPage}>
       <div className={style.companyHeading}>
-        <h1 className={style.companySlogan}>Tabliczki znamionowe i firmowe.</h1>
-        <Button onClick={null} className={style.moreButton} text="Zobacz oferte" />
+        <h1 className={style.companySlogan}>{company.slogan}</h1>
+        <article className={style.companyBrief}>{company.brief}</article>
+        <Button onClick={null} className={style.moreButton} text="Zobacz oferte"/>
       </div>
-     <PlatesMock/>
+      <PlatesMock/>
     </main>
   </div>
 );

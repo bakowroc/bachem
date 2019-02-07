@@ -1,0 +1,7 @@
+@import '../styles/sizes';
+
+.scrollable {
+  margin-top: $navigation-height;
+  overflow-y: auto;
+  height: calc(100vh - #{$navigation-height});
+}

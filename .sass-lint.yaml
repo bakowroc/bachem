@@ -1,0 +1,25 @@
+options:
+formatter: stylish
+merge-default-rules: true
+
+files:
+include: 'src/**/*.scss'
+
+rules:
+
+# Disallows
+no-color-literals: 0
+no-important: 0
+no-transition-all: 0
+
+# Nesting
+force-element-nesting: 0
+force-pseudo-nesting: 0
+nesting-depth: 0
+
+# Name Formats
+class-name-format: 0
+
+# Quotes
+quotes: 1
+url-quotes: 1

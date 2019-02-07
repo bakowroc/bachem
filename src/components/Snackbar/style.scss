@@ -1,0 +1,25 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/sizes';
+
+.snackbar {
+  @include translate-y-out(.2, 100%);
+  align-items: center;
+  background: $darken-gray;
+  bottom: $space-primary;
+  border-radius: $primary-radius;
+  color: $main-white;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: $space-primary;
+  position: fixed;
+  width: 350px;
+  z-index: 3;
+
+  &.show {
+    @include translate-y-in(.2, 0);
+  }
+}

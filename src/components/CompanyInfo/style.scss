@@ -1,13 +1,12 @@
 @import "../../styles/colors";
 @import "../../styles/sizes";
+@import "../../styles/mixins";
 
 .container {
+  @include container;
   align-items: center;
-  background:$dark-blue;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
+  background: $dark-blue;
+  padding: $space-primary * 4 0;
 
   .companyInfo {
     align-items: center;

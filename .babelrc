@@ -1,14 +1,11 @@
 {
-  "plugins": [
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    ["@babel/plugin-transform-react-jsx", { "pragma":"h" }]
-  ],
+  "sourceMaps": true,
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "entry"
-      }
-    ]
+    ["es2015", { "loose":true }],
+    "stage-0"
+  ],
+  "plugins": [
+    ["transform-decorators-legacy"],
+    ["transform-react-jsx", { "pragma": "h" }]
   ]
 }

@@ -7,6 +7,8 @@ import {LandingPage} from "../LandingPage/LandingPage";
 
 import * as style from './style.scss';
 import {CompanyInfo} from "../CompanyInfo/CompanyInfo";
+import {Contact} from "../Contact/Contact";
+import {Footer} from "../Footer/Footer";
 
 export class Home extends Component {
   home = document.createElement('div');
@@ -14,15 +16,8 @@ export class Home extends Component {
     isHomeScrolled: false
   };
 
-  onHomeScroll = () => {
-   const isHomeScrolled = this.home.scrollTop !== 0;
-   if(isHomeScrolled !== this.state.isHomeScrolled) {
-     this.setState({isHomeScrolled}, () => this.props.onScroll(this.state.isHomeScrolled));
-   }
-  };
-
   componentDidMount() {
-    this.home.onscroll = this.onHomeScroll;
+    this.home.onscroll = this.onAppScroll;
   }
 
   render({}, {isHomeScrolled}, {}) {
@@ -30,6 +25,7 @@ export class Home extends Component {
       <div ref={ref => this.home = ref} className={style.home}>
         <LandingPage/>
         <CompanyInfo />
+        <Contact onAction={this.props.onAction}/>
       </div>
     );
   }

@@ -3,14 +3,16 @@
 
 .container {
   transform: translateX(-100%);
+  background: $main-blue;
   transition: transform .2s ease;
   bottom: 0;
   height: 100vh;
   left: 0;
   position: fixed;
   top: 0;
+  min-width: 300px;
   width: calc((100vw - #{$main-content-width}) /2 - #{$space-primary});
-  background: $main-gray;
+  z-index: 2;
 
   &.show {
     transform: translateX(0);
@@ -18,9 +20,19 @@
   }
 
   .header {
-    background: darken($main-gray, 5%);
+    background: darken($main-blue, 5%);
     height: $navigation-height;
     padding: $space-secondary;
+
+    .navIcon {
+      svg {
+        fill: $main-white;
+      }
+
+      &:hover {
+        background: darken($main-blue, 7%);;
+      }
+    }
   }
 
   .productListNav {
@@ -37,35 +49,44 @@
       margin-bottom: 2 * $space-primary;
 
       h2 {
-        color: $dark-gray;
+        color: $main-white;
         font-size: 1.1em;
         font-weight: 500;
-        padding-left: $space-secondary;
+        padding-bottom: $space-secondary;
         margin-bottom: $space-secondary;
+        border-bottom: 1px solid lighten($main-blue, 5%);
       }
-      li {
 
+      li {
         a {
-          color: $dark-gray;
-          display: block;
-          font-size: .95em;
+          align-items: center;
+          color: $main-white;
+          display: flex;
+          flex-direction: row;
+          font-size: .85em;
           text-decoration: none;
           padding: $space-secondary + 5 $space-secondary;
 
-          &:hover {
-            background: darken($main-gray, 5%);
-            color: $main-blue;
+          &:hover, &.active {
+            background: darken($main-blue, 5%);
+            border-radius: $primary-radius;
           }
 
-          &.active {
-            background: darken($main-gray, 5%);
-            color: $main-blue;
+          .icon {
+            margin-right: $space-primary;
+
+            svg {
+              fill: $main-white;
+              height: 20px;
+              width: 20px;
+            }
           }
         }
       }
     }
 
     .button {
+      background: darken($main-blue, 5%);;
       width: 100%;
     }
   }

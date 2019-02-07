@@ -1,0 +1,59 @@
+{
+  "extends": ["eslint:latest", "eslint-react", "eslint-rules", "eslint-config-prettier"],
+  "rules": {
+    // tslint:recommended rules https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts
+    "array-type": [true, "generic"],
+    "arrow-parens": false,
+    "cyclomatic-complexity": [true, 9],
+    "interface-name": [true, "never-prefix"],
+    "max-line-length": [true, 120],
+    "member-access": [true, "no-public"],
+    "member-ordering": [true, {"order": "statics-first"}],
+    "no-var-requires": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [true, "avoid-escape", "single", "jsx-double"],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "variable-name": [true, "check-format", "allow-leading-underscore", "allow-pascal-case"],
+
+    // tslint-react rules https://www.npmjs.com/package/tslint-react
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-key": true,
+
+    // tslint-eslint-rules https://www.npmjs.com/package/tslint-eslint-rules
+    "no-constant-condition": true,
+    "no-control-regex": true,
+    "no-duplicate-case": true,
+    "no-empty-character-class": true,
+    "no-ex-assign": true,
+    "no-extra-boolean-cast": true,
+    "no-extra-semi": true,
+    "no-inner-declarations": true,
+    "no-invalid-regexp": true,
+    "no-irregular-whitespace": true,
+    "no-regex-spaces": true,
+    "no-sparse-arrays": true,
+    "no-unexpected-multiline": true,
+    "valid-jsdoc": true,
+    "valid-typeof": true,
+    "no-multi-spaces": true,
+    "handle-callback-err": true,
+    "array-bracket-spacing": [true, "never"],
+    "block-spacing": [true, "always"],
+    "brace-style": [true, "1tbs", { "allowSingleLine": true }],
+    "space-in-parens": [true, "never"],
+    "ter-arrow-body-style": true,
+    "ter-arrow-spacing": true,
+    "ter-prefer-arrow-callback": true,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "no-object-literal-type-assertion": false,
+    "no-unnecessary-initializer": false
+  },
+  "rulesDirectory": ["eslint-plugin-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  }
+}

@@ -16,14 +16,39 @@ export class Product extends Component {
      try {
        const content = productContent[product];
        return this.renderContent(content)
-     } catch {
-       return
+     } catch(err) {
+        return null
      }
     } else {
       route('/', true);
-      return
+      return null
     }
   };
+
+  renderPhotos = (photos) => (
+    <div className={style.photos}>
+      {photos.map(photo => <Paper depth={1} round={2} className={style.photo}><img src={photo.src} /></Paper>)}
+    </div>
+  );
+
+  renderFeatures = (features) => (
+    <div className={style.features}>
+      <ul className={style.featuresList}>
+        {features.adv.map(feature =>
+          <li className={style.feature}>
+            <Icon className={style.featureIcon} name="checkmark-outline" />
+            {feature}
+          </li> )}
+      </ul>
+      <ul className={style.featuresList}>
+        {features.dAdv.map(feature =>
+          <li className={style.feature}>
+            <Icon className={style.featureIcon} name="close-outline" />
+            {feature}
+          </li> )}
+      </ul>
+    </div>
+  );
 
   renderContent = ({heading, description, photos, features}) => (
     <div className={style.product}>
@@ -34,26 +59,9 @@ export class Product extends Component {
             {description}
           </div>
         </article>
-        <div className={style.photos}>
-          {photos.map(photo => <Paper depth={1} round={2} className={style.photo}><img src={photo.src} /></Paper> )}
-        </div>
+        {this.renderPhotos(photos)}
       </div>
-      <Paper depth={2} round={2} className={style.features}>
-        <ul className={style.featuresList}>
-          {features.adv.map(feature =>
-            <li className={style.feature}>
-              <Icon className={style.featureIcon} name="checkmark-outline" />
-              {feature}
-            </li> )}
-        </ul>
-        <ul className={style.featuresList}>
-          {features.dAdv.map(feature =>
-            <li className={style.feature}>
-              <Icon className={style.featureIcon} name="close-outline" />
-              {feature}
-            </li> )}
-        </ul>
-      </Paper>
+      {this.renderFeatures(features)}
     </div>
   );
 
