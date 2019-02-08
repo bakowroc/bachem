@@ -2,21 +2,21 @@
 @import '../../styles/sizes';
 
 .container {
-  background: $main-white;
   align-items: center;
+  background: $main-white;
   display: flex;
-  justify-content: center;
-  width: 100%;
   height: $navigation-height;
+  justify-content: center;
   position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1;
 
   .header {
     display: flex;
+    height: 100%;
     justify-content: space-between;
     width: $main-content-width;
-    height: 100%;
   }
 }
 
@@ -40,8 +40,8 @@
   }
 
   &.open {
-    position: absolute;
     left: $space-secondary;
+    position: absolute;
 
     svg {
       fill: darken($main-gray, 5%);

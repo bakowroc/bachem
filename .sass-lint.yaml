@@ -4,6 +4,7 @@ merge-default-rules: true
 
 files:
 include: 'src/**/*.scss'
+exclude: node_modules/**
 
 rules:
 

@@ -30,15 +30,14 @@ export class Header extends Component {
     return this.props.isAppScrolled;
   };
 
-  render({isAppScrolled}, {}, {}) {
-    console.log(this.state.isCloseRequested);
+  render({isAppScrolled}, {isListLocked}, {}) {
     return (
       <Paper depth={isAppScrolled ? 4 : 15} className={style.container}>
         <Icon name="menu-outline" onClick={this.onProductNavToggle} className={`${style.productNavIcon} ${style.open}`}/>
         <header className={style.header}>
           <Logo/>
           <Navigation />
-          <ProductNavList isShown={this.shouldNavListShown()} onClose={this.onProductNavToggle}/>
+          <ProductNavList isShown={this.shouldNavListShown()} onClose={this.onProductNavToggle} />
         </header>
       </Paper>
     )

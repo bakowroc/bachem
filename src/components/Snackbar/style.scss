@@ -6,16 +6,16 @@
   @include translate-y-out(.2, 100%);
   align-items: center;
   background: $darken-gray;
-  bottom: $space-primary;
   border-radius: $primary-radius;
+  bottom: $space-primary;
   color: $main-white;
   display: flex;
   justify-content: center;
   left: 0;
-  right: 0;
   margin: 0 auto;
   padding: $space-primary;
   position: fixed;
+  right: 0;
   width: 350px;
   z-index: 3;
 

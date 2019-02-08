@@ -2,20 +2,20 @@
 @import '../../styles/sizes';
 
 .container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: calc(100vh - #{$navigation-height});
   display: flex;
+  height: calc(100vh - #{$navigation-height});
   justify-content: center;
-  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  width: 100%;
 
   .product {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: $main-content-width;
     margin-top: $space-primary;
+    width: $main-content-width;
 
     .info {
       padding: $space-primary;
@@ -25,8 +25,8 @@
         color: $dark-gray;
         font-size: 2em;
         font-weight: 400;
-        margin-top: 0;
         margin-bottom: $space-primary * 2;
+        margin-top: 0;
 
         &:first-letter {
           background: $dark-gray;
@@ -37,8 +37,8 @@
 
       .description {
         display: flex;
-        justify-content: space-between;
         flex-direction: row;
+        justify-content: space-between;
         margin-bottom: $space-primary * 4;
 
         .text {
@@ -48,48 +48,25 @@
 
         }
       }
-
-      .photos {
-        display: inline;
-
-        .photo {
-          float: left;
-          height: 200px;
-          width: 200px;
-          margin-right: $space-primary;
-          margin-bottom: $space-primary;
-          overflow: hidden;
-          background: radial-gradient($main-white, $main-blue);
-
-          &:last-child {
-            margin-right: 0;
-          }
-
-          img {
-            opacity: .7;
-            height: 100%;
-          }
-        }
-      }
     }
 
     .features {
       background: $main-gray;
-      width: 350px;
       height: 450px;
-      padding: $space-primary * 2;
       margin-top: $space-primary;
+      padding: $space-primary * 2;
+      width: 350px;
 
       .featuresList {
         list-style: none;
         margin-bottom: $space-primary * 2;
 
         .feature {
-          display: flex;
           align-items: center;
-          justify-content: flex-start;
           color: $dark-gray;
+          display: flex;
           font-size: 1.3em;
+          justify-content: flex-start;
           margin-bottom: $space-primary;
 
           .featureIcon {

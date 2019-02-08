@@ -55,8 +55,8 @@
 @mixin container() {
   display: flex;
   justify-content: center;
-  overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
   width: 100%;
   z-index: 0;

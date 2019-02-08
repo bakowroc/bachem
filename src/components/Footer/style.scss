@@ -5,23 +5,23 @@
 .container {
   @include flex-common;
   @include container;
-  position: relative;
   background: $main-gray;
+  position: relative;
 
   .footer {
-    @include flex-common($align-items: flex-start, $justify-content: flex-start, $direction: row);
+    @include flex-common($align-items: flex-start, $justify-content: center, $direction: row);
     padding: $space-primary * 2;
     width: $main-content-width;
 
     .infoBox {
-      @include flex-common($width: calc(100% / 3));
-      margin-right: $space-primary * 2;
-      padding-right: $space-primary * 2;
+      @include flex-common;
+      padding: 0 $space-primary;
+      width: auto;
+      text-align: right;
 
       &:last-child {
-        padding: 0;
-        margin: 0;
-        border: 0;
+        border-left: 1px solid darken($main-gray, 10%);
+        text-align: left;
       }
 
       .fastNav {
@@ -38,12 +38,12 @@
           }
 
           li a {
-            display: block;
-            text-decoration: none;
             color: darken($main-gray, 20%);
+            display: block;
             font-size: .85em;
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: $space-secondary;
+            text-decoration: none;
           }
         }
       }
@@ -53,19 +53,8 @@
   .copyright {
     @include flex-common($direction: row);
     color: darken($main-gray, 25%);
-    font-weight: 400;
     font-size: .95em;
-    padding: $space-primary;
-
-    .text {
-      font-weight: 500;
-      margin-left: $space-secondary;
-
-      &:first-letter {
-        background: $dark-blue;
-        color: $main-white;
-        padding-left: 3px;
-      }
-    }
+    font-weight: 400;
+    padding: 0 $space-primary $space-primary;
   }
 }

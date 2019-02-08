@@ -2,17 +2,17 @@
 @import '../../styles/sizes';
 
 .logo {
-  display: flex;
   align-items: center;
+  display: flex;
 
   .text {
     color: $main-blue;
-    font-weight: 500;
+    font-size: 1.1em;
 
     &:first-letter {
       background: $main-blue;
       color: $main-white;
-      padding-left: $space-secondary
+      padding-left: $space-primary;
     }
   }
 }

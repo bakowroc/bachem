@@ -10,18 +10,18 @@
 
   .companyInfo {
     align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     padding: $space-primary;
     width: $main-content-width;
 
     .infoBox {
-      flex-direction: column;
-      justify-content: space-between;
       background: $main-white;
       display: flex;
+      flex-direction: column;
       height: 450px;
+      justify-content: space-between;
       padding: $space-primary * 2;
       width: 350px;
 
@@ -33,11 +33,11 @@
           list-style: none;
 
           .contentListItem {
-            display: flex;
             align-items: center;
-            justify-content: flex-start;
             color: $dark-gray;
+            display: flex;
             font-size: 1.3em;
+            justify-content: flex-start;
             margin-bottom: $space-primary;
 
             .contentListIcon {

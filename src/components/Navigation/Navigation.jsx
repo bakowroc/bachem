@@ -7,7 +7,7 @@ export const Navigation = () => {
     <ul className={style.mainMenu}>
       <li className={style.menuItem}><a href="/">Strona gówna</a></li>
       <li className={style.menuItem}><a href="/o-nas">O nas</a></li>
-      <li className={style.menuItem}><a href="/kontakt">Kontakt</a></li>
+      <li className={style.menuItem}><a href="#kontakt">Kontakt</a></li>
     </ul>
   );
 

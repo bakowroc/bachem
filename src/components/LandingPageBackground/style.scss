@@ -2,41 +2,48 @@
 @import '../../styles/sizes';
 
 .landingPageBackground {
+  height: 100%;
+  overflow: hidden;
   position: absolute;
   top: 0;
-  z-index: -1;
-  overflow: hidden;
   width: 100%;
-  height: 100%;
+  z-index: -1;
+  transition: all .2s ease;
+
+  &.onScroll {
+    opacity: .4;
+    transform: translateX(20%);
+    transition: all .2s ease;
+  }
 
   .bubbleBackground {
     position: relative;
 
     .bubble {
-      position: absolute;
       background: $main-gray;
       border-radius: $full-radius;
-      top: -25vw;
-      right: -58vw;
       height: 100vw;
+      position: absolute;
+      right: -48vw;
+      top: -25vw;
       width: 100vw;
 
       &:nth-child(2) {
-        border-bottom-left-radius: 140%;
         background: linear-gradient(90deg, darken($main-blue, 5%), $main-blue);
-        right: -60vw;
+        border-bottom-left-radius: 140%;
+        right: -50vw;
       }
 
       &:nth-child(3) {
-        border-bottom-left-radius: 200%;
         background: linear-gradient(90deg, darken($main-blue, 7%), $main-blue);
-        right: -63vw;
+        border-bottom-left-radius: 200%;
+        right: -53vw;
       }
 
       &:nth-child(4) {
+        background: linear-gradient(90deg, darken($main-blue, 7%), $main-blue);
         border-bottom-left-radius: 500%;
-        background: $main-white;
-        right: -65vw;
+        right: -55vw;
       }
     }
   }

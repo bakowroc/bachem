@@ -1,0 +1,142 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+@keyframes poping-1 {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .1;
+  }
+}
+
+@keyframes poping-2 {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .2;
+  }
+}
+
+@keyframes poping-3 {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .3;
+  }
+}
+
+@keyframes poping-4 {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .4;
+  }
+}
+
+@keyframes poping-5 {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.platesMock {
+  position: relative;
+  width: 250px;
+  margin-top: 90px;
+  height: 70px;
+  transform: rotateZ(9deg);
+  transition: all .2s ease;
+
+  &.onScroll {
+    opacity: 0;
+    transition: all .2s ease;
+  }
+
+  .plate {
+    border-radius: $primary-radius + 2;
+    height: 200px;
+    position: absolute;
+    width: 350px;
+
+    &:nth-child(1) {
+      background: lighten($light-blue, 25%);
+      transform:
+        skewX(-70deg)
+        rotateX(-65deg)
+        rotateZ(5deg)
+        translateY(- 65px * 1)
+        translateX(- 65px * 1.5);
+      opacity: .1;
+      animation: poping-1 2s 1;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      background: lighten($light-blue, 20%);
+      transform:
+        skewX(-70deg)
+        rotateX(-65deg)
+        rotateZ(5deg)
+        translateY(- 65px * 2)
+        translateX(- 65px * 3);
+      opacity: .2;
+      animation: poping-2 2s 1;
+      animation-delay: .5s;
+    }
+
+    &:nth-child(3) {
+      background: lighten($light-blue, 15%);
+      transform:
+        skewX(-70deg)
+        rotateX(-65deg)
+        rotateZ(5deg)
+        translateY(- 65px * 3)
+        translateX(- 65px * 4.5);
+      opacity: .3;
+      animation: poping-3 2s 1;
+      animation-delay: 1s;
+    }
+
+    &:nth-child(4) {
+      background: lighten($main-gray, 5%);
+      transform:
+        skewX(-70deg)
+        rotateX(-65deg)
+        rotateZ(5deg)
+        translateY(- 65px * 4)
+        translateX(- 65px * 6);
+      opacity: .4;
+      animation: poping-4 2s 1;
+      animation-delay: 1.5s;
+    }
+
+    &:nth-child(5) {
+      background: lighten($main-gray, 0%);
+      transform:
+        skewX(-70deg)
+        rotateX(-65deg)
+        rotateZ(5deg)
+        translateY(- 65px * 5)
+        translateX(- 65px * 7.5);
+      opacity: 1;
+      animation: poping-5 2s 1;
+      animation-delay: 2s;
+    }
+
+    &:first-child {
+      background: darken($main-blue, 40%);
+    }
+  }
+}

@@ -19,8 +19,8 @@
     .input, .textarea {
       border: 1px solid darken($main-gray, 5%);
       border-radius: $primary-radius;
-      padding: $space-secondary + 5;
       margin-bottom: $space-primary;
+      padding: $space-secondary + 5;
     }
 
     .textarea {

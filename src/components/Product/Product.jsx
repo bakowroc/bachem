@@ -7,6 +7,7 @@ import {PRODUCTS_ITEMS} from "../ProductNavList/ProductNavList";
 import {productContent} from "./ProductContent";
 import {Paper} from "../Paper/Paper";
 import {Icon} from "../Icon/Icon";
+import {Gallery} from "../Gallery/Gallery";
 
 const VALID_PRODUCTS = PRODUCTS_ITEMS.map(item => item.href);
 
@@ -24,12 +25,6 @@ export class Product extends Component {
       return null
     }
   };
-
-  renderPhotos = (photos) => (
-    <div className={style.photos}>
-      {photos.map(photo => <Paper depth={1} round={2} className={style.photo}><img src={photo.src} /></Paper>)}
-    </div>
-  );
 
   renderFeatures = (features) => (
     <div className={style.features}>
@@ -59,14 +54,13 @@ export class Product extends Component {
             {description}
           </div>
         </article>
-        {this.renderPhotos(photos)}
+        <Gallery photos={photos} />
       </div>
       {this.renderFeatures(features)}
     </div>
   );
 
   render() {
-    console.log(this.props.product);
     return (
       <div className={style.container}>
         {this.chooseContent(this.props.product)}

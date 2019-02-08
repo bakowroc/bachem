@@ -8,14 +8,13 @@ export class Contact extends Component {
 
   onFormSubmit = (data) => {
     const { subject, returningEmail, content } = data;
-    console.log(subject, returningEmail, content)
   };
 
   onFormError = ({isError, message}) => this.props.onAction({isShown: isError, message});
 
   render({}, {snackbar}, {}) {
     return (
-      <div className={style.container}>
+      <div className={style.container} id="contact">
         <div className={style.circleShape} />
         <section className={style.contact}>
           <Paper depth={3} round={2} className={style.infoBox}>

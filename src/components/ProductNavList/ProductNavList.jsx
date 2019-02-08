@@ -24,13 +24,12 @@ export const PRODUCTS_ITEMS = [
 export class ProductNavList extends Component {
   renderHeader = (onClose) => (
     <header className={style.header}>
-      <Icon name="close-outline" onClick={onClose} className={`${headerStyle.productNavIcon} ${style.navIcon}`}/>
+      <Icon name="arrow-back-outline" onClick={onClose} className={`${headerStyle.productNavIcon} ${style.navIcon}`}/>
     </header>
   );
 
   renderList = (heading, items) => (
     <ul className={style.productList}>
-     <h2>{heading}</h2>
       {items.map(item =>
         <li>
           <Link activeClassName={style.active} href={`/produkty/${item.href}`}>
@@ -42,7 +41,7 @@ export class ProductNavList extends Component {
     </ul>
   );
 
-  render({isShown, onClose}, {}, {}){
+  render({isShown, onClose, isLocked}, {}, {}) {
     return(
       <Paper depth={5} className={`${style.container} ${isShown ? style.show : ''}`}>
         {this.renderHeader(onClose)}

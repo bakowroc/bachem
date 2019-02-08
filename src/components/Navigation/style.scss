@@ -3,28 +3,28 @@
 
 .navigation {
   align-items: center;
-  justify-content: center;
-  display: flex;
   background: $main-gray;
+  display: flex;
+  justify-content: center;
   padding: $space-primary;
 
   .mainMenu {
-    list-style: none;
     display: flex;
+    list-style: none;
 
     .menuItem {
-      margin: 0 $space-secondary;
-      font-weight: 500;
       font-size: .95em;
+      font-weight: 500;
+      margin: 0 $space-secondary;
 
       a {
         color: $dark-gray;
-        text-decoration: none;
         padding: $space-secondary;
+        text-decoration: none;
 
         &:hover {
-          color: $main-blue;
           border-radius: $primary-radius;
+          color: $main-blue;
         }
       }
     }

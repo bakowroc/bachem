@@ -1,0 +1,92 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+@import "../../styles/sizes";
+
+.gallery {
+  position: relative;
+  z-index: 1;
+
+  .photos {
+    display: inline;
+
+    .photo {
+      background: radial-gradient($main-white, $main-blue);
+      float: left;
+      height: 200px;
+      margin-bottom: $space-primary;
+      margin-right: $space-primary;
+      overflow: hidden;
+      width: 200px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      img {
+        @include scale-in(.2, 1);
+        height: 100%;
+        opacity: .7;
+
+        &:hover {
+          @include scale-in(.2, 1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .popup {
+    @include fade-out(.2);
+    @include flex-common;
+    @include container;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
+
+    &.show {
+      @include fade-in(.2);
+    }
+
+    .content {
+      @include flex-common($direction: row);
+      position: relative;
+      z-index: 4;
+      width: auto;
+
+      .img {
+        overflow: hidden;
+      }
+
+      .arrow {
+        background: rgba($dark-blue, .2);
+        border-radius: $primary-radius;
+        padding: $space-secondary;
+        margin: $space-secondary;
+
+        &:hover {
+          cursor: pointer;
+          background: rgba($dark-blue, .5);
+        }
+
+        svg {
+          fill: $main-white;
+        }
+      }
+    }
+
+    .blockLayer {
+      height: 100%;
+      background: rgba($main-blue, .5);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 3;
+      width: 100%;
+    }
+  }
+}

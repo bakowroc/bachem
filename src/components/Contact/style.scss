@@ -7,14 +7,14 @@
   background: lighten($main-gray, 4%);
 
   .circleShape {
-    border-radius: 40%;
-    position: absolute;
     background: $main-gray;
-    width: 120vw;
+    border-radius: 40%;
     height: 70vh;
-    top: -50vh;
+    position: absolute;
     right: -15vw;
+    top: -50vh;
     transform: rotate(-10deg);
+    width: 120vw;
     z-index: 0;
   }
 
@@ -24,19 +24,19 @@
     z-index: 1;
 
     .infoBox {
+      background: $main-white;
       display: flex;
       flex-direction: row;
-      background: $main-white;
-      overflow: hidden;
       height: 720px;
+      overflow: hidden;
       width: 100%;
 
       .content {
         border-right: 1px solid darken($main-gray, 5%);
-        flex-direction: column;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         height: 100%;
+        justify-content: space-around;
         padding: $space-primary * 2;
         width: calc(#{$main-content-width} / 3);
 

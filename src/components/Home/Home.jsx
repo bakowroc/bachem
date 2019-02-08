@@ -11,19 +11,10 @@ import {Contact} from "../Contact/Contact";
 import {Footer} from "../Footer/Footer";
 
 export class Home extends Component {
-  home = document.createElement('div');
-  state = {
-    isHomeScrolled: false
-  };
-
-  componentDidMount() {
-    this.home.onscroll = this.onAppScroll;
-  }
-
-  render({}, {isHomeScrolled}, {}) {
+  render({isAppScrolled}, {}, {}) {
     return (
-      <div ref={ref => this.home = ref} className={style.home}>
-        <LandingPage/>
+      <div className={style.home}>
+        <LandingPage isScrolled={isAppScrolled}/>
         <CompanyInfo />
         <Contact onAction={this.props.onAction}/>
       </div>

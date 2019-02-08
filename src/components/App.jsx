@@ -44,12 +44,11 @@ export class App extends Component {
   render({}, {isAppScrolled, snackbar}, {}) {
     return (
       <div>
-        {console.log(snackbar)}
         <Snackbar isShown={snackbar.isShown} message={snackbar.message}/>
         <Header isAppScrolled={isAppScrolled}/>
         <div className={style.scrollable} ref={ref => this.app = ref} onScroll={this.onAppScroll} >
           <Router onChange={this.handleRouteChange}>
-            <Home path="/" onAction={this.onAction} />
+            <Home path="/" onAction={this.onAction} isAppScrolled={isAppScrolled}/>
             <Product path="/produkty/:product" />
           </Router>
           <Footer />

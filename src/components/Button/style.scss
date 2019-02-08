@@ -8,12 +8,12 @@
   border-radius: $primary-radius;
   color: $main-white;
   cursor: pointer;
-  height: 53px;
   display: flex;
-  justify-content: center;
-  padding: $space-secondary + 3 $space-secondary;
   font-weight: 500;
+  height: 53px;
+  justify-content: center;
   outline: none;
+  padding: $space-secondary + 3 $space-secondary;
   transition: background .2s ease;
 
   &:hover {

@@ -2,31 +2,30 @@
 @import '../../styles/sizes';
 
 .platesMock {
-  position: relative;
   height: 200px;
+  position: relative;
   width: 450px;
-  margin-right: 150px;
 
   .plate {
     background: darken($main-gray, 5%);
     border-radius: $primary-radius + 2;
     height: 200px;
-    transform: perspective(500px) rotateY(-45deg);
     padding: $space-primary;
     perspective: 1000px;
     position: absolute;
+    transform: perspective(500px) rotateY(-45deg);
     width: 450px;
 
     &:nth-child(2) {
       background: $main-gray;
-      top: $space-primary * 1.5;
       left: $space-primary * 1.5;
+      top: $space-primary * 1.5;
     }
 
     &:nth-child(3) {
       background: $main-white;
-      top: $space-primary * 3;
       left: $space-primary * 3;
+      top: $space-primary * 3;
     }
 
     .plateMock {
