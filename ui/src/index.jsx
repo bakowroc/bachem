@@ -1,4 +1,5 @@
 import 'normalize.css';
+import 'typeface-roboto';
 import './styles/global.scss';
 
 import {h, render} from 'preact';

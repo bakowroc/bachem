@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import { Link } from 'preact-router/Match';
+import { Link } from 'preact-router/match';
 
 import {Paper} from "../Paper/Paper";
 import {Icon} from "../Icon/Icon";

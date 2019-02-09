@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import { Link } from 'preact-router/Match';
+import { Link } from 'preact-router/match';
 
 import * as style from './style.scss';
 import {PRODUCTS_ITEMS} from "../ProductNavList/ProductNavList";

@@ -1,6 +1,6 @@
 import {Component, h} from 'preact';
 import { Router } from 'preact-router';
-import Match from 'preact-router/Match';
+import Match from 'preact-router/match';
 
 import {Header} from "../Header/Header";
 import {LandingPage} from "../LandingPage/LandingPage";
