@@ -7,8 +7,6 @@ mod api;
 
 fn main() {
     rocket::ignite()
-        .mount("/products", routes![api::products::get_all, api::products::get_single])
-        .mount("/mail", routes![api::mail::send_mail])
-        .launch();
+        .mount("/product", routes![api::products::get_all, api::products::get_single])
+        .mount("/mail", routes![api::mail::send_mail]).launch();
 }
-
