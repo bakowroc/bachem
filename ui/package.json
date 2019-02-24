@@ -18,8 +18,7 @@
     "eva-icons": "^1.1.1",
     "normalize.css": "^8.0.1",
     "preact": "latest",
-    "preact-router": "^2.6.1",
-    "typeface-roboto": "0.0.54"
+    "preact-router": "^2.6.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",

@@ -83,16 +83,16 @@ export const CompanyInfo = () => {
       <article className={style.companyInfo}>
         <Paper depth={3} round={2} className={style.infoBox}>
           {renderBasicTerms()}
-          <Button className={style.button} onClick={null} text="Zloz zamowienie"/>
+          <Button className={style.button} href="/zamowienie" text="Zloz zamowienie"/>
         </Paper>
         <Paper depth={3} round={2} className={style.infoBox}>
           {renderMethods()}
-          <Button className={style.button} onClick={null} outline={true} text="Szczegoly"/>
+          <Button className={style.button} href="/metody" outline={true} text="Szczegoly"/>
         </Paper>
         <Paper depth={3} round={2} className={style.infoBox}>
           {renderTransport()}
           {renderTransportSubinfo()}
-          <Button className={style.button} onClick={null} outline={true} text="Szczegoly"/>
+          <Button className={style.button} href="/transport" outline={true} text="Szczegoly"/>
         </Paper>
       </article>
     </div>

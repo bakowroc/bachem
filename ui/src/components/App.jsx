@@ -7,6 +7,7 @@ import {Footer} from "./Footer/Footer";
 
 import * as style from './app.scss';
 import {Snackbar} from "./Snackbar/Snackbar";
+import {Methods} from "./Methods/Methods";
 
 export class App extends Component {
   snackbarTimeout = undefined;
@@ -50,6 +51,7 @@ export class App extends Component {
           <Router onChange={this.handleRouteChange}>
             <Home path="/" onAction={this.onAction} isAppScrolled={isAppScrolled}/>
             <Product path="/produkty/:product" />
+            <Methods path="/metody/:method?" />
           </Router>
           <Footer />
         </div>

@@ -1,0 +1,32 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/sizes';
+
+.container {
+  @include container;
+  height: calc(100vh - #{$navigation-height});
+
+  .methods {
+    margin-top: $space-primary;
+    padding: $space-primary;
+    width: $main-content-width;
+
+    .header {
+      margin-bottom: $space-primary * 2;
+
+      .heading {
+        color: $dark-gray;
+        font-size: 2em;
+        font-weight: 400;
+        margin-bottom: $space-primary * 2;
+        margin-top: 0;
+
+        &:first-letter {
+          background: $dark-gray;
+          color: $main-white;
+          padding-left: $space-secondary;
+        }
+      }
+    }
+  }
+}

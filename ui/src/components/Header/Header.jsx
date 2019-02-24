@@ -21,9 +21,16 @@ export class Header extends Component {
 
   onProductNavToggle = () => this.setState(state => ({isCloseRequested: !state.isCloseRequested}));
   shouldNavListShown = () => {
+    const pathname = window.location.pathname;
+    if(pathname.includes("produkty")) {
+      return true;
+    }
+
     if (!this.props.isAppScrolled) {
       return this.state.isCloseRequested;
-    } else if(this.state.isCloseRequested && this.props.isAppScrolled) {
+    }
+
+    if(this.state.isCloseRequested && this.props.isAppScrolled) {
       return !this.state.isCloseRequested;
     }
 

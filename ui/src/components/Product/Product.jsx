@@ -1,5 +1,5 @@
 import {h, Component} from 'preact';
-import {route} from 'preact-router';
+import {Link, route} from 'preact-router';
 
 import * as style from './style.scss';
 
@@ -26,26 +26,7 @@ export class Product extends Component {
     }
   };
 
-  renderFeatures = (features) => (
-    <div className={style.features}>
-      <ul className={style.featuresList}>
-        {features.adv.map(feature =>
-          <li className={style.feature}>
-            <Icon className={style.featureIcon} name="checkmark-outline" />
-            {feature}
-          </li> )}
-      </ul>
-      <ul className={style.featuresList}>
-        {features.dAdv.map(feature =>
-          <li className={style.feature}>
-            <Icon className={style.featureIcon} name="close-outline" />
-            {feature}
-          </li> )}
-      </ul>
-    </div>
-  );
-
-  renderContent = ({heading, description, photos, features}) => (
+  renderContent = ({heading, description, photos, methods}) => (
     <div className={style.product}>
       <div className={style.info}>
         <h1 className={style.heading}>{heading}</h1>
@@ -56,7 +37,19 @@ export class Product extends Component {
         </article>
         <Gallery photos={photos} />
       </div>
-      {this.renderFeatures(features)}
+      <div className={style.relevantMethods}>
+        <h2 className={style.heading2}>Proponowane metody wykonania</h2>
+        <nav className={style.relevantMethodsNav}>
+          <ul>
+            {methods.map(method =>
+              <li>
+                <Icon className={style.icon} name="link-2-outline" />
+                <Link activeClassName={null} href={`/metody/${method.toLowerCase()}`}>{method}</Link>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 

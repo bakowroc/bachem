@@ -26,18 +26,12 @@ export const productContent = {
 		heading: "Tabliczki znamionowe",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		features: {
-			adv: ['Niska cena', 'Niski czas'],
-			dAdv: ['Slaby produkt']
-		}
+		methods: ['Anodowanie', 'Trawienie']
 	},
 	[ProductRoute.WYWIESZKI_ETYKIETY]: {
 		heading: "Wywieszki i etykiety",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		features: {
-			adv: ['Niska cena', 'Niski czas'],
-			dAdv: ['Slaby produkt']
-		}
+    methods: ['Anodowanie', 'Trawienie']
 	}
 };

@@ -3,15 +3,13 @@
 @import "../../styles/sizes";
 
 .gallery {
-  position: relative;
-  z-index: 1;
 
   .photos {
-    display: inline;
+    display: inline-block;
 
     .photo {
-      background: radial-gradient($main-white, $main-blue);
       float: left;
+      background: radial-gradient($main-white, $main-blue);
       height: 200px;
       margin-bottom: $space-primary;
       margin-right: $space-primary;
@@ -44,7 +42,9 @@
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 3;
+    z-index: 6;
+    width: 100vw;
+    height: 100vh;
 
     &.show {
       @include fade-in(.2);
@@ -61,32 +61,43 @@
       }
 
       .arrow {
-        background: rgba($dark-blue, .2);
-        border-radius: $primary-radius;
-        padding: $space-secondary;
-        margin: $space-secondary;
+        display: flex;
+        position: fixed;
+        background: $main-white;
+        border-radius: $full-radius;
+        padding: $space-primary;
+
+        &.back {
+          left: $space-primary * 3;
+        }
+
+        &.forward {
+          right: $space-primary * 3;
+        }
 
         &:hover {
           cursor: pointer;
-          background: rgba($dark-blue, .5);
+          background: rgba($main-white, .8);
         }
 
         svg {
-          fill: $main-white;
+          height: 32px;
+          fill: $dark-gray;
+          width: 32px;
         }
       }
     }
 
     .blockLayer {
-      height: 100%;
       background: rgba($main-blue, .5);
+      height: 100vh;
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       top: 0;
       z-index: 3;
-      width: 100%;
+      width: 100vw;
     }
   }
 }

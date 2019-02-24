@@ -24,8 +24,6 @@ export class Gallery extends Component {
       --key;
       break;
    }
-   console.log(key)
-
   this.setState({selected: {...this.props.photos[key], key}});
 };
 
@@ -35,13 +33,13 @@ export class Gallery extends Component {
     <div className={`${style.popup} ${this.state.isPopupShown ? style.show : ''}`}>
       <div className={style.content}>
         {this.state.selected.key > 0 &&
-          <Icon className={style.arrow} name="arrow-back-outline" onClick={() => this.navigate('b')}/>
+          <Icon className={`${style.arrow} ${style.back}`} name="arrow-back-outline" onClick={() => this.navigate('b')}/>
         }
         <Paper depth={3} round={2} className={style.img}>
           <img src={this.state.selected.src} />
         </Paper>
         {this.state.selected.key < this.props.photos.length - 1 &&
-          <Icon className={style.arrow} name="arrow-forward-outline" onClick={() => this.navigate('f')}/>}
+          <Icon className={`${style.arrow} ${style.forward}`} name="arrow-forward-outline" onClick={() => this.navigate('f')}/>}
       </div>
       <div className={style.blockLayer} onClick={this.togglePopup} />
     </div>
@@ -49,11 +47,11 @@ export class Gallery extends Component {
 
   onPreview = (photo, key) => this.setState({selected: {...photo, key}}, this.togglePopup);
 
-  render({photos}, {selected, isPopupShown}, {}) {
+  render({className, photos}, {selected, isPopupShown}, {}) {
     return (
      <section className={style.gallery}>
        {this.renderPopup()}
-       <div className={style.photos}>
+       <div className={`${style.photos} ${className}`}>
          {photos.map((photo, key) => <Paper depth={1} round={2} className={style.photo}><img onClick={() => this.onPreview(photo, key)} src={photo.src} /></Paper>)}
        </div>
      </section>
