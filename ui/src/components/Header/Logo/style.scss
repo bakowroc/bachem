@@ -1,5 +1,5 @@
-@import '../../styles/colors';
-@import '../../styles/sizes';
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
 
 .logo {
   align-items: center;
@@ -13,6 +13,17 @@
       background: $main-blue;
       color: $main-white;
       padding-left: $space-primary;
+    }
+  }
+
+  &.reverse {
+    .text {
+      color: $main-white;
+
+      &:first-letter {
+        background: $main-white;
+        color: $main-blue;
+      }
     }
   }
 }

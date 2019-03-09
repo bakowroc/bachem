@@ -13,20 +13,6 @@
 
     .header {
       margin-bottom: $space-primary * 2;
-
-      .heading {
-        color: $dark-gray;
-        font-size: 2em;
-        font-weight: 400;
-        margin-bottom: $space-primary * 2;
-        margin-top: 0;
-
-        &:first-letter {
-          background: $dark-gray;
-          color: $main-white;
-          padding-left: $space-secondary;
-        }
-      }
     }
 
     .method {

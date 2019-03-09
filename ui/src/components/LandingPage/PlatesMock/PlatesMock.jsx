@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import * as style from './style.scss';
-import {Paper} from "../Paper/Paper";
+import {Paper} from "../../Paper/Paper";
 
 const NUMBER_OF_PLATES = 3;
 

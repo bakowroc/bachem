@@ -2,7 +2,7 @@ import {h} from 'preact';
 import { Link } from 'preact-router/match';
 
 import * as style from './style.scss';
-import {PRODUCTS_ITEMS} from "../ProductNavList/ProductNavList";
+import {PRODUCTS_ITEMS} from "../Header/ProductNavList/ProductNavList";
 
 const COMPANY_ITEMS = [
   {display: 'O nas', href: 'o-nas'},

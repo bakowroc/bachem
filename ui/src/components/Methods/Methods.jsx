@@ -1,11 +1,12 @@
 import {Component, h} from 'preact';
 
-import {Tabs} from "../Tabs/Tabs";
-
-import * as style from './style.scss';
-import {AnodizingData, DigestionData, EngravingData, LaserData, ScreenPrintingData} from "./MethodsContent";
 import {Gallery} from "../Gallery/Gallery";
 import {Icon} from "../Icon/Icon";
+import {Tabs} from "../Tabs/Tabs";
+import {AnodizingData, DigestionData, EngravingData, LaserData, ScreenPrintingData} from "./MethodsContent";
+
+import * as globalStyle from '../../styles/global.scss';
+import * as style from './style.scss';
 
 export class Methods extends Component {
   constructor(props) {
@@ -58,7 +59,7 @@ export class Methods extends Component {
       <div className={style.container}>
         <section className={style.methods}>
           <header className={style.header}>
-            <h1 className={style.heading}>Metody wykonania</h1>
+            <h1 className={globalStyle.pageHeading}>Metody wykonania</h1>
           </header>
           <Tabs body={this.tabsBody} active={this.props.method}/>
         </section>

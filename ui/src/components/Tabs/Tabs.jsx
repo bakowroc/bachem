@@ -34,7 +34,7 @@ export class Tabs extends Component {
 
     return (
       <div className={style.tabs}>
-        <Paper depth={1} round={2} className={style.headerWrapper}>
+        <Paper depth={1} round={4} className={style.headerWrapper}>
           <header className={style.header}>
             {tabs.map((tab, key) => this.renderSwitch(tab, key))}
           </header>

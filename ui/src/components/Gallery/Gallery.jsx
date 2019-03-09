@@ -9,15 +9,15 @@ export class Gallery extends Component {
 
   render({className, photos}, {}, {}) {
     return (
-     <section className={style.gallery}>
-       <div className={`${style.photos} ${className}`}>
-         {photos.map((photo, key) => (
-           <Paper depth={1} round={2} className={style.photo}>
-             <img onClick={() => this.onPreview(photo, key)} src={photo.src} />
-           </Paper>)
-         )}
-       </div>
-     </section>
+      <section className={style.gallery}>
+        <div className={`${style.photos} ${className}`}>
+          {photos.map((photo, key) => (
+            <Paper depth={1} round={4} className={style.photo}>
+              <img onClick={() => this.onPreview(photo, key)} src={photo.src} />
+            </Paper>)
+          )}
+        </div>
+      </section>
     );
   }
 }

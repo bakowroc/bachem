@@ -17,20 +17,6 @@
       padding: $space-primary;
       width: calc(#{$main-content-width} - 350px - #{$space-primary});
 
-      .heading {
-        color: $dark-gray;
-        font-size: 2em;
-        font-weight: 400;
-        margin-bottom: $space-primary * 2;
-        margin-top: 0;
-
-        &:first-letter {
-          background: $dark-gray;
-          color: $main-white;
-          padding-left: $space-secondary;
-        }
-      }
-
       .description {
         display: flex;
         flex-direction: row;
@@ -48,7 +34,7 @@
     .relevantMethods {
       padding: $space-primary * 5 $space-primary $space-primary;
 
-      .heading2 {
+      .heading {
         color: $main-blue;
         font-size: 1.2em;
         font-weight: 400;

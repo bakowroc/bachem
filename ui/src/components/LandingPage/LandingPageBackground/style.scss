@@ -1,5 +1,5 @@
-@import '../../styles/colors';
-@import '../../styles/sizes';
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
 
 .landingPageBackground {
   height: 100%;
@@ -9,40 +9,36 @@
   width: 100%;
   z-index: -1;
   transition: all .2s ease;
-
-  &.onScroll {
-    transform: translateX(20%);
-    transition: all .2s ease;
-  }
+  opacity: .8;
 
   .bubbleBackground {
     position: relative;
 
     .bubble {
-      background: $main-gray;
+      background: rgba($main-gray, .1);
       border-radius: $full-radius;
       height: 100vw;
       position: absolute;
-      right: -48vw;
+      right: -58vw;
       top: -25vw;
       width: 100vw;
 
       &:nth-child(2) {
         background: linear-gradient(90deg, darken($main-blue, 5%), $main-blue);
         border-bottom-left-radius: 140%;
-        right: -50vw;
+        right: -60vw;
       }
 
       &:nth-child(3) {
         background: linear-gradient(90deg, darken($main-blue, 7%), $main-blue);
         border-bottom-left-radius: 200%;
-        right: -53vw;
+        right: -63vw;
       }
 
       &:nth-child(4) {
         background: linear-gradient(90deg, darken($main-blue, 7%), $main-blue);
         border-bottom-left-radius: 500%;
-        right: -55vw;
+        right: -65vw;
       }
     }
   }

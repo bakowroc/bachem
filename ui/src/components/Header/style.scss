@@ -18,6 +18,10 @@
     justify-content: space-between;
     width: $main-content-width;
   }
+
+  &.reverse {
+    background: linear-gradient(90deg, darken($main-blue, 7%), $main-blue);
+  }
 }
 
 .productNavIcon {

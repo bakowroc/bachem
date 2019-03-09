@@ -1,11 +1,11 @@
 import {Component, h} from 'preact';
 
-import {Navigation} from "../Navigation/Navigation";
-import {Logo} from "../Logo/Logo";
+import {Navigation} from "./Navigation/Navigation";
+import {Logo} from "./Logo/Logo";
 import {Paper} from "../Paper/Paper";
 
 import * as style from './style.scss';
-import {ProductNavList} from "../ProductNavList/ProductNavList";
+import {ProductNavList} from "./ProductNavList/ProductNavList";
 import {Icon} from "../Icon/Icon";
 
 const LOCK_IN_ROUTES = ['produkty', 'metody'];
@@ -36,24 +36,24 @@ export class Header extends Component {
       return true
     }
 
-    if (!this.props.isAppScrolled) {
+    if (this.props.isAppScrolled) {
       return this.state.isCloseRequested;
     }
 
-    if(this.state.isCloseRequested && this.props.isAppScrolled) {
+    if(this.state.isCloseRequested && !this.props.isAppScrolled) {
       return !this.state.isCloseRequested;
     }
 
-    return this.props.isAppScrolled;
+    return !this.props.isAppScrolled;
   };
 
-  render({isAppScrolled}, {isListLocked}, {}) {
+  render({isAppScrolled, isInRoot}, {isListLocked}, {}) {
     return (
-      <Paper depth={isAppScrolled ? 4 : 15} className={style.container}>
+      <Paper depth={isAppScrolled ? 4 : 15} className={`${style.container} ${!isInRoot ? style.reverse : ''}`}>
         <Icon name="menu-outline" onClick={this.onProductNavToggle} className={`${style.productNavIcon} ${style.open}`}/>
         <header className={style.header}>
-          <Logo/>
-          <Navigation />
+          <Logo isInRoot={isInRoot}/>
+          <Navigation isInRoot={isInRoot}/>
           <ProductNavList
             isShown={this.shouldNavListShown()}
             onClose={this.onProductNavToggle}

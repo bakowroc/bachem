@@ -1,9 +1,8 @@
-@import '../../styles/colors';
-@import '../../styles/sizes';
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
 
 .navigation {
   align-items: center;
-  background: $main-gray;
   display: flex;
   justify-content: center;
   padding: $space-primary;
@@ -21,10 +20,24 @@
         color: $dark-gray;
         padding: $space-secondary;
         text-decoration: none;
+        text-transform: lowercase;
+        font-weight: 500;
 
         &:hover {
           border-radius: $primary-radius;
           color: $main-blue;
+        }
+      }
+    }
+
+    &.reverse {
+      .menuItem {
+        a {
+          color: $main-white;
+
+          &:hover {
+            color: $main-gray;
+          }
         }
       }
     }

@@ -1,14 +1,14 @@
-@import "../../styles/colors";
-@import "../../styles/sizes";
+@import "../../../styles/colors";
+@import "../../../styles/sizes";
 
 .container {
+  background: $main-white;
   position: relative;
-  width: 100%;
+  width: 780px;
 
   .form {
     display: flex;
     flex-direction: column;
-    width: 100%;
 
     .label {
       color: darken($main-gray, 35%);
@@ -17,14 +17,20 @@
     }
 
     .input, .textarea {
-      border: 1px solid darken($main-gray, 5%);
+      background: $main-white;
+      border: 2px solid darken($main-gray, 5%);
       border-radius: $primary-radius;
       margin-bottom: $space-primary;
-      padding: $space-secondary + 5;
+      padding: $space-secondary;
+
+      &:focus {
+        border-color: $main-blue;
+        outline: none;
+      }
     }
 
     .textarea {
-      height: 350px;
+      height: 150px;
       resize: none;
     }
 

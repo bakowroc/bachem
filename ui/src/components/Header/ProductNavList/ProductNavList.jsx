@@ -1,12 +1,12 @@
 import {h, Component} from 'preact';
 import { Link } from 'preact-router/match';
 
-import {Paper} from "../Paper/Paper";
-import {Icon} from "../Icon/Icon";
+import {Paper} from "../../Paper/Paper";
+import {Icon} from "../../Icon/Icon";
 
-import * as headerStyle from '../Header/style.scss';
+import * as headerStyle from '../style.scss';
 import * as style from './style.scss';
-import {ProductRoute} from "../Product/ProductContent";
+import {ProductRoute} from "../../Product/ProductContent";
 
 export const PRODUCTS_ITEMS = [
   {display: 'Tabliczki znamionowe', href: ProductRoute.TABLICZKI_ZNAMIONOWE},

@@ -1,8 +1,9 @@
 import {Component, h} from 'preact';
 
-import {Button} from "../Button/Button";
+import {Button} from "../../Button/Button";
 import * as style from './style.scss';
-import {Icon} from "../Icon/Icon";
+import {Icon} from "../../Icon/Icon";
+import {Paper} from "../../Paper/Paper";
 
 const ContactError = {
   NO_EMPTY_SUBJECT: "Temat wiadomosci nie moze byc pusty",
@@ -62,7 +63,7 @@ export class ContactForm extends Component {
   render({className}, {error, isError, isSubmit}, {}) {
     const submitText = isSubmit ? "checkmark-circle-outline" : "arrow-forward-outline";
     return (
-      <div className={style.container}>
+      <Paper depth={1} round={4} className={style.container}>
         <form ref={ref => this.form = ref} className={`${style.form} ${className}`}>
 
           <label className={style.label} for="subject">Temat wiadomosci</label>
@@ -76,7 +77,7 @@ export class ContactForm extends Component {
 
           <Button text={<Icon name={submitText} className={style.icon}/>} onClick={this.handleSubmit} className={`${style.submitButton} ${isSubmit ? style.success : ''}`}/>
         </form>
-      </div>
+      </Paper>
     );
   }
 }

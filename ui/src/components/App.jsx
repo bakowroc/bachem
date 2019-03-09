@@ -15,6 +15,7 @@ export class App extends Component {
   app = undefined;
   state = {
     isAppScrolled: false,
+    isInRoot: window.location.pathname === "/",
     snackbar: {
       isShown: false,
       message: ''
@@ -43,6 +44,7 @@ export class App extends Component {
 
   handleRouteChange = () => {
     if(this.app) {
+      this.setState({isInRoot: window.location.pathname === "/"});
       this.app.scrollTop = 0;
     }
   };
@@ -55,7 +57,7 @@ export class App extends Component {
       <div>
         <GalleryPopup data={gallery} isShown={isGalleryPopupShown} onClose={this.onGalleryPopupClose}/>
         <Snackbar isShown={snackbar.isShown} message={snackbar.message}/>
-        <Header isAppScrolled={isAppScrolled}/>
+        <Header isAppScrolled={isAppScrolled} isInRoot={this.state.isInRoot}/>
         <div className={style.scrollable} ref={ref => this.app = ref} onScroll={this.onAppScroll} >
           <Router onChange={this.handleRouteChange}>
             <Home path="/" onAction={this.onAction} isAppScrolled={isAppScrolled}/>

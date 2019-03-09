@@ -1,13 +1,14 @@
 import {h, Component} from 'preact';
 import {Link, route} from 'preact-router';
 
-import * as style from './style.scss';
 
-import {PRODUCTS_ITEMS} from "../ProductNavList/ProductNavList";
-import {productContent} from "./ProductContent";
-import {Paper} from "../Paper/Paper";
-import {Icon} from "../Icon/Icon";
 import {Gallery} from "../Gallery/Gallery";
+import {PRODUCTS_ITEMS} from "../Header/ProductNavList/ProductNavList";
+import {Icon} from "../Icon/Icon";
+import {productContent} from "./ProductContent";
+
+import * as globalStyle from '../../styles/global.scss';
+import * as style from './style.scss';
 
 const VALID_PRODUCTS = PRODUCTS_ITEMS.map(item => item.href);
 
@@ -29,7 +30,7 @@ export class Product extends Component {
   renderContent = ({heading, description, photos, methods}) => (
     <div className={style.product}>
       <div className={style.info}>
-        <h1 className={style.heading}>{heading}</h1>
+        <h1 className={globalStyle.pageHeading}>{heading}</h1>
         <article className={style.description}>
           <div className={style.text}>
             {description}
@@ -38,7 +39,7 @@ export class Product extends Component {
         <Gallery photos={photos} onPopupShow={this.props.onGalleryPopupShow} />
       </div>
       <div className={style.relevantMethods}>
-        <h2 className={style.heading2}>Proponowane metody wykonania</h2>
+        <h2 className={style.heading}>Proponowane metody wykonania</h2>
         <nav className={style.relevantMethodsNav}>
           <ul>
             {methods.map(method =>
