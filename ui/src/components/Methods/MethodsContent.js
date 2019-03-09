@@ -4,9 +4,10 @@ export const AnodizingData = {
     "Proponujemy wykonanie tablic (tabliczek) tą metodą na maszyny i urządzenia do pomieszczeń o szkodliwych warunkach np. Kotłownie, węzły ciepłownicze oraz z przeznaczeniem na budynki bramy, hale. Tablice wykonujemy o różnych wymiarach i kształtach nadruk w pięciu podstawowych kolorach."
   ],
   photos: [
-    {src: "http://www.cilinc.com/images/anodize.jpg"},
-    {src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUusWkTMhcbCuQM3yILvtk8-wV1WTWPRVYtABsjkvO3KYa2vQR"},
-    {src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD0lxbGD_qzkjFsmoru5b8sC8qMOQpsgmmcyQvelNPwgUBdxUH-Q"}
+    {src: "http://lorempixel.com/400/200/"},
+    {src: "http://lorempixel.com/400/300/"},
+    {src: "http://lorempixel.com/400/400/"},
+    {src: "http://lorempixel.com/500/200/"}
   ],
   features: {
     pos: [
@@ -26,8 +27,10 @@ export const ScreenPrintingData = {
     "Oferujemy wykonanie nadruków tą metodą na: tworzywach sztucznych [PCV twardym, miękkim, spienionym, PE ,PP,] kartonie, pleksi, folii samoprzylepnej itd. Metoda ta służy do wykonywania różnego rodzaju etykiet, wywieszek, nadruków na gadżetach."
   ],
   photos: [
-    {src: "https://www.pyramidscreenproducts.co.uk/Files/111974/Img/17/siebdruckmaschine2-screen-printing-zoom.jpg"},
-    {src: "https://www.spudnikpress.org/wp-content/uploads/2017/03/Screenprinting-Exp-585x370.jpg"}
+    {src: "http://lorempixel.com/400/200/"},
+    {src: "http://lorempixel.com/400/300/"},
+    {src: "http://lorempixel.com/400/400/"},
+    {src: "http://lorempixel.com/500/200/"}
   ],
   features: {
     pos: [
@@ -44,7 +47,10 @@ export const EngravingData = {
     "Proponujemy wykonanie tablic (tabliczek) tą metodą na maszyny i urządzenia do pomieszczeń o szkodliwych warunkach np. Kotłownie, węzły ciepłownicze oraz z przeznaczeniem na budynki bramy, hale. Tablice wykonujemy o różnych wymiarach i kształtach nadruk w pięciu podstawowych kolorach."
   ],
   photos: [
-    {src: "http://www.cilinc.com/images/anodize.jpg"}
+    {src: "http://lorempixel.com/400/200/"},
+    {src: "http://lorempixel.com/400/300/"},
+    {src: "http://lorempixel.com/400/400/"},
+    {src: "http://lorempixel.com/500/200/"}
   ],
   features: {
     pos: [
@@ -61,7 +67,10 @@ export const DigestionData = {
     "Proponujemy wykonanie tabliczek, tablic na podłożach takich jak: blacha kwasoodporna, blacha nierdzewna oraz na blasze mosiężnej."
   ],
   photos: [
-    {src: "http://www.cilinc.com/images/anodize.jpg"}
+    {src: "http://lorempixel.com/400/200/"},
+    {src: "http://lorempixel.com/400/300/"},
+    {src: "http://lorempixel.com/400/400/"},
+    {src: "http://lorempixel.com/500/200/"}
   ],
   features: {
     pos: [
@@ -79,7 +88,10 @@ export const LaserData = {
     "Proponujemy wykonanie tablic (tabliczek) tą metodą na maszyny i urządzenia do pomieszczeń o szkodliwych warunkach np. Kotłownie, węzły ciepłownicze oraz z przeznaczeniem na budynki bramy, hale. Tablice wykonujemy o różnych wymiarach i kształtach nadruk w pięciu podstawowych kolorach."
   ],
   photos: [
-    {src: "http://www.cilinc.com/images/anodize.jpg"}
+    {src: "http://lorempixel.com/400/200/"},
+    {src: "http://lorempixel.com/400/300/"},
+    {src: "http://lorempixel.com/400/400/"},
+    {src: "http://lorempixel.com/500/200/"}
   ],
   features: {
     pos: [

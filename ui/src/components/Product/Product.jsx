@@ -35,7 +35,7 @@ export class Product extends Component {
             {description}
           </div>
         </article>
-        <Gallery photos={photos} />
+        <Gallery photos={photos} onPopupShow={this.props.onGalleryPopupShow} />
       </div>
       <div className={style.relevantMethods}>
         <h2 className={style.heading2}>Proponowane metody wykonania</h2>

@@ -1,28 +1,56 @@
 import {Component, h} from 'preact';
 
 import {Tabs} from "../Tabs/Tabs";
-import {SingleMethod} from "./SingleMethod";
 
 import * as style from './style.scss';
 import {AnodizingData, DigestionData, EngravingData, LaserData, ScreenPrintingData} from "./MethodsContent";
+import {Gallery} from "../Gallery/Gallery";
+import {Icon} from "../Icon/Icon";
 
 export class Methods extends Component {
-  tabsBody = {
-    tabs: [
-      "Anodowanie",
-      "Sitodruk",
-      "Trawienie",
-      "Grawerowanie",
-      "Ciecie laserem"
-    ],
-    content: [
-      <SingleMethod data={AnodizingData}/>,
-      <SingleMethod data={ScreenPrintingData}/>,
-      <SingleMethod data={DigestionData}/>,
-      <SingleMethod data={EngravingData}/>,
-      <SingleMethod data={LaserData}/>,
-    ]
-  };
+  constructor(props) {
+    super(props);
+    this.tabsBody = {
+      tabs: [
+        "Anodowanie",
+        "Sitodruk",
+        "Trawienie",
+        "Grawerowanie",
+        "Ciecie laserem"
+      ],
+      content: [
+        this.renderSingleMethod(AnodizingData),
+        this.renderSingleMethod(ScreenPrintingData),
+        this.renderSingleMethod(DigestionData),
+        this.renderSingleMethod(EngravingData),
+        this.renderSingleMethod(LaserData)
+      ]
+    };
+
+  }
+
+
+  renderFeatures = (features) => (
+    <div className={style.features}>
+      <ul className={style.featuresList}>
+        {features.pos.map(feature =>
+          <li className={style.feature}>
+            <Icon className={style.featureIcon} name="checkmark-outline" />
+            {feature}
+          </li> )}
+      </ul>
+    </div>
+  );
+
+  renderSingleMethod = (data) => (
+    <div className={style.method}>
+      <article className={style.methodInfo}>
+        {data.description.map(paragraph => <p>{paragraph}</p>)}
+        {this.renderFeatures(data.features)}
+      </article>
+      <Gallery className={style.gallery} photos={data.photos} onPopupShow={this.props.onGalleryPopupShow} />
+    </div>
+  );
 
 
   render({}, {}, {}) {

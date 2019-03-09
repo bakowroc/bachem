@@ -8,6 +8,8 @@ import * as style from './style.scss';
 import {ProductNavList} from "../ProductNavList/ProductNavList";
 import {Icon} from "../Icon/Icon";
 
+const LOCK_IN_ROUTES = ['produkty', 'metody'];
+
 export class Header extends Component {
   state = {
     isCloseRequested: false
@@ -20,10 +22,18 @@ export class Header extends Component {
   }
 
   onProductNavToggle = () => this.setState(state => ({isCloseRequested: !state.isCloseRequested}));
-  shouldNavListShown = () => {
+  isNavbarLocked = () => {
     const pathname = window.location.pathname;
-    if(pathname.includes("produkty")) {
-      return true;
+    for (let lockRoute of LOCK_IN_ROUTES) {
+      if (pathname.includes(lockRoute)) {
+        return true;
+      }
+    }
+  };
+
+  shouldNavListShown = () => {
+    if(this.isNavbarLocked()) {
+      return true
     }
 
     if (!this.props.isAppScrolled) {
@@ -44,7 +54,10 @@ export class Header extends Component {
         <header className={style.header}>
           <Logo/>
           <Navigation />
-          <ProductNavList isShown={this.shouldNavListShown()} onClose={this.onProductNavToggle} />
+          <ProductNavList
+            isShown={this.shouldNavListShown()}
+            onClose={this.onProductNavToggle}
+          />
         </header>
       </Paper>
     )
