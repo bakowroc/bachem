@@ -1,14 +1,10 @@
 @import '../../styles/colors';
 @import '../../styles/sizes';
+@import '../../styles/mixins';
 
 .container {
-  display: flex;
+  @include container;
   height: calc(100vh - #{$navigation-height});
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  width: 100%;
 
   .product {
     display: flex;
@@ -21,20 +17,6 @@
       padding: $space-primary;
       width: calc(#{$main-content-width} - 350px - #{$space-primary});
 
-      .heading {
-        color: $dark-gray;
-        font-size: 2em;
-        font-weight: 400;
-        margin-bottom: $space-primary * 2;
-        margin-top: 0;
-
-        &:first-letter {
-          background: $dark-gray;
-          color: $main-white;
-          padding-left: $space-secondary;
-        }
-      }
-
       .description {
         display: flex;
         flex-direction: row;
@@ -45,35 +27,46 @@
           color: $dark-gray;
           line-height: 1.5;
           text-align: justify;
-
         }
       }
     }
 
-    .features {
-      background: $main-gray;
-      height: 450px;
-      margin-top: $space-primary;
-      padding: $space-primary * 2;
-      width: 350px;
+    .relevantMethods {
+      padding: $space-primary * 5 $space-primary $space-primary;
 
-      .featuresList {
-        list-style: none;
-        margin-bottom: $space-primary * 2;
+      .heading {
+        color: $main-blue;
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: $space-primary;
+      }
 
-        .feature {
-          align-items: center;
-          color: $dark-gray;
-          display: flex;
-          font-size: 1.3em;
-          justify-content: flex-start;
-          margin-bottom: $space-primary;
+      .relevantMethodsNav {
+        ul {
+          list-style: none;
 
-          .featureIcon {
-            margin-right: $space-primary;
+          li {
+            align-items: center;
+            display: flex;
 
-            svg {
-              fill: $dark-gray;
+            .icon {
+              margin-top: 3px;
+
+              svg {
+                fill: $light-blue;
+                height: 18px;
+                margin-right: $space-secondary;
+                width: 18px;
+              }
+            }
+
+            a {
+              color: $dark-gray;
+              text-decoration: none;
+
+              &:hover {
+                opacity: .7;
+              }
             }
           }
         }

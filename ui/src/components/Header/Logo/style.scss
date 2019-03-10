@@ -1,0 +1,34 @@
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
+
+.logo {
+  align-items: center;
+  display: flex;
+
+  .text {
+    a {
+      color: $main-blue;
+      font-size: 1.1em;
+      text-decoration: none;
+    }
+
+    &:first-letter {
+      background: $main-blue;
+      color: $main-white;
+      padding-left: $space-secondary;
+    }
+  }
+
+  &.reverse {
+    .text {
+       a {
+        color: $main-white;
+      }
+
+      &:first-letter {
+        background: $main-white;
+        color: $main-blue;
+      }
+    }
+  }
+}

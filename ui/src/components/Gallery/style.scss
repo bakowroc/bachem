@@ -3,15 +3,14 @@
 @import "../../styles/sizes";
 
 .gallery {
-  position: relative;
-  z-index: 1;
+  position: static;
 
   .photos {
-    display: inline;
+    display: inline-block;
 
     .photo {
-      background: radial-gradient($main-white, $main-blue);
       float: left;
+      background: radial-gradient($main-white, $main-blue);
       height: 200px;
       margin-bottom: $space-primary;
       margin-right: $space-primary;
@@ -34,59 +33,73 @@
       }
     }
   }
+}
 
-  .popup {
-    @include fade-out(.2);
-    @include flex-common;
-    @include container;
+.popup {
+  @include fade-out(.2);
+  @include flex-common;
+  @include container;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 6;
+  width: 100vw;
+  height: 100vh;
+
+  &.show {
+    @include fade-in(.2);
+  }
+
+  .content {
+    @include flex-common($direction: row);
+    position: relative;
+    z-index: 4;
+    width: auto;
+
+    .img {
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .arrow {
+      display: flex;
+      position: fixed;
+      background: $main-white;
+      border-radius: $full-radius;
+      padding: $space-primary;
+
+      &.back {
+        left: $space-primary * 3;
+      }
+
+      &.forward {
+        right: $space-primary * 3;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background: rgba($main-white, .8);
+      }
+
+      svg {
+        height: 32px;
+        fill: $dark-gray;
+        width: 32px;
+      }
+    }
+  }
+
+  .blockLayer {
+    background: rgba($main-blue, .5);
+    height: 100vh;
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: fixed;
     right: 0;
     top: 0;
     z-index: 3;
-
-    &.show {
-      @include fade-in(.2);
-    }
-
-    .content {
-      @include flex-common($direction: row);
-      position: relative;
-      z-index: 4;
-      width: auto;
-
-      .img {
-        overflow: hidden;
-      }
-
-      .arrow {
-        background: rgba($dark-blue, .2);
-        border-radius: $primary-radius;
-        padding: $space-secondary;
-        margin: $space-secondary;
-
-        &:hover {
-          cursor: pointer;
-          background: rgba($dark-blue, .5);
-        }
-
-        svg {
-          fill: $main-white;
-        }
-      }
-    }
-
-    .blockLayer {
-      height: 100%;
-      background: rgba($main-blue, .5);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-      z-index: 3;
-      width: 100%;
-    }
+    width: 100vw;
   }
 }

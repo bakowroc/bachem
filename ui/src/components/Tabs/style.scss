@@ -1,0 +1,26 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/mixins';
+
+.tabs {
+  .headerWrapper {
+    overflow: hidden;
+
+    .header {
+      display: flex;
+      flex-direction: row;
+
+      .tab {
+        background: $main-white;
+        border-radius: 0;
+        color: $dark-gray;
+        width: 100%;
+
+        &.active {
+          background: $main-gray;
+        }
+      }
+    }
+  }
+
+}

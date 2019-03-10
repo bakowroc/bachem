@@ -13,7 +13,7 @@
   height: 53px;
   justify-content: center;
   outline: none;
-  padding: $space-secondary + 3 $space-secondary;
+  padding: $space-secondary;
   transition: background .2s ease;
 
   &:hover {
@@ -23,7 +23,7 @@
 
   &.outline {
     background: transparent;
-    border: 1px solid $main-blue;
+    border: 2px solid $main-blue;
     color: $main-blue;
 
     &:hover {

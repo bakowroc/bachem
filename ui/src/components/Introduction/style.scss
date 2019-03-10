@@ -1,0 +1,85 @@
+@import "../../styles/colors";
+@import "../../styles/sizes";
+@import "../../styles/mixins";
+
+.container {
+  @include container;
+  align-items: center;
+  background: $main-white;
+  padding: $space-primary $space-primary * 4;
+  border-bottom: $navigation-height solid $main-gray;
+
+  .introduction {
+    padding: $space-primary;
+    width: $main-content-width;
+
+    .boxes {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: $space-primary * 2 0;
+
+      .box {
+        @include flex-common($justify-content: space-around);
+        height: 300px;
+        width: 350px;
+
+        .circle {
+          @include flex-common;
+          border-radius: $full-radius;
+          height: 180px;
+          width: 180px;
+
+          .icon {
+            svg {
+              fill: darken($main-gray, 7);
+              height: 48px;
+              width: 48px;
+            }
+          }
+        }
+
+        .title {
+          color: $dark-gray;
+          font-size: 1.3em;
+          font-weight: 400;
+          margin-top: $space-primary;
+          text-align: center;
+          width: 200px;
+        }
+
+        .p {
+          color: darken($main-gray, 30%);
+          font-size: .85em;
+          font-weight: 400;
+          width: 200px;
+        }
+
+        &:nth-child(1) {
+          .circle {
+            border: 10px solid $dark-blue;
+          }
+        }
+
+        &:nth-child(2) {
+          .circle {
+            border: 10px solid $main-blue;
+          }
+        }
+
+        &:nth-child(3) {
+          .circle {
+            border: 10px solid $light-blue;
+          }
+        }
+
+        &:nth-child(4) {
+          .circle {
+            border: 10px solid lighten($light-blue, 8);
+          }
+        }
+      }
+    }
+  }
+}

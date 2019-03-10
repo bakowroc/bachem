@@ -26,18 +26,60 @@ export const productContent = {
 		heading: "Tabliczki znamionowe",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		features: {
-			adv: ['Niska cena', 'Niski czas'],
-			dAdv: ['Slaby produkt']
-		}
+		methods: ['Anodowanie', 'Trawienie']
+	},
+	[ProductRoute.TABLICZKI_FIRMOWE]: {
+		heading: "Tabliczki firmowe",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+    methods: ['Anodowanie', 'Sitodruk']
+	},
+	[ProductRoute.TABLICZKI_FABRYCZNE]: {
+		heading: "Tabliczki fabryczne",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Laser', 'Trawienie']
+	},
+	[ProductRoute.PANELE_STEROWNICZE]: {
+		heading: "Panele sterownicze",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Ciecie laserem', 'Trawienie']
+	},
+	[ProductRoute.TABLICE_CZOLOWE_MASZYN]: {
+		heading: "Tablice czolowe maszyn",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Anodowanie', 'Trawienie']
+	},
+	[ProductRoute.SKALE_LINIALY_SCHEMATY]: {
+		heading: "Skale, linialy i schematy",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Anodowanie', 'Trawienie', 'Sitodruk']
+	},
+	[ProductRoute.TABLICZKI_ROZNE]: {
+		heading: "Tabliczki roznego typu",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Anodowanie', 'Trawienie', 'Sitodruk', 'Grawerowanie']
+	},
+	[ProductRoute.TABLICE_INFORMACYJNE]: {
+		heading: "Tablice informacyjne",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Anodowanie', 'Trawienie']
 	},
 	[ProductRoute.WYWIESZKI_ETYKIETY]: {
 		heading: "Wywieszki i etykiety",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		features: {
-			adv: ['Niska cena', 'Niski czas'],
-			dAdv: ['Slaby produkt']
-		}
+		methods: ['Anodowanie', 'Trawienie']
+	},
+	[ProductRoute.NUMERATORY]: {
+		heading: "Numeratory",
+		description: lorem({count: 10}),
+		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
+		methods: ['Anodowanie', 'Trawienie']
 	}
 };
