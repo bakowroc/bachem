@@ -2,10 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
   mode: 'none',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   devServer: {
@@ -17,11 +17,12 @@ module.exports = {
     }
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-    },{
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader'
+      }, {
         test: /\.scss$/,
         loaders : [
           'style-loader',
@@ -35,29 +36,29 @@ module.exports = {
           },
           'sass-loader'
         ]
-      },{
+      }, {
         test: /\.css$/,
         use: [
           "style-loader",
           "css-loader"
         ]
-      },  {
-      test: /\.(jpe?g|png|gif|svg|ttf|woff|woff2)$/i,
-      use: [
-        'url-loader?limit=10000',
-        'img-loader'
-      ]
+      }, {
+        test: /\.(jpe?g|png|gif|svg|ttf|woff|woff2)$/i,
+        use: [
+          'url-loader?limit=10000',
+          'img-loader'
+        ]
     }
   ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Bachem - tabliczki znamionowe",
       template: "./src/index.ejs",
-      filename: path.resolve(__dirname, 'build/index.html'),
+      filename: path.resolve(__dirname, 'dist/index.html'),
     })
   ]
 };
