@@ -3,7 +3,7 @@
 @import '../../styles/mixins';
 
 .container {
-  background:  $main-blue url('./bg.png');
+  background: $main-blue url('./bg.png');
   @include container;
   height: calc(100vh - #{$navigation-height});
 
@@ -38,6 +38,7 @@
 
       .companySlogan {
         font-size: 2em;
+        font-weight: 500;
         margin-bottom: $space-secondary;
       }
 

@@ -6,7 +6,7 @@ import * as globalStyle from '../../styles/global.scss';
 import * as style from './style.scss';
 
 const Introduction = () => (
-  <div className={style.container}>
+  <div className={style.container} id="about">
     <article className={style.introduction}>
       <h3 className={globalStyle.pageHeading}>Poznaj nas</h3>
       <div className={style.boxes}>

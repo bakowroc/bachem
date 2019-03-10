@@ -14,9 +14,9 @@ const PlatesMock = () => {
 
   return (
     <div className={style.platesMock}>
-      <Paper className={style.plate} depth={5} children={renderMockContent()} />;
-      <Paper className={style.plate} depth={5} children={renderMockContent()} />;
-      <Paper className={style.plate} depth={5} children={renderMockContent()} />;
+      <Paper className={style.plate} depth={5} round={4} children={renderMockContent()} />
+      <Paper className={style.plate} depth={5} round={4} children={renderMockContent()} />
+      <Paper className={style.plate} depth={5} round={4} children={renderMockContent()} />
     </div>
   );
 };

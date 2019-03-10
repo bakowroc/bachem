@@ -22,17 +22,30 @@ const App = () => {
 
   useEffect(() => {
     setupApp();
+    scrollToView();
 
     history.listen(() => {
-     setupApp()
+      setupApp();
+      scrollToView();
     });
   }, []);
 
   const setupApp = () => {
     app.setValue({
-      isInRoot: window.location.pathname === "/"
+      isInRoot: history.location.pathname === "/"
     });
-    appRef.current.scrollTop = 0;
+  };
+
+  const scrollToView = () => {
+    const hash = history.location.hash;
+    let section;
+
+    try {
+     section = document.getElementById(hash.replace('#', ''));
+      section.scrollIntoView({ block: 'start',  behavior: 'smooth' });
+    } catch(e) {
+      appRef.current.scrollTop = 0;
+    }
   };
 
   const onAppScroll = () => {
@@ -40,7 +53,7 @@ const App = () => {
     if(isScrolled !== app.isScrolled) {
       app.setValue({
         isScrolled,
-        isSidebarShown: !isScrolled || ['metody', 'produkty'].map(route => window.location.pathname.includes(route)).indexOf(true) > -1
+        isSidebarShown: !isScrolled || ['metody', 'produkty'].map(route => history.location.pathname.includes(route)).indexOf(true) > -1
       });
     }
   };

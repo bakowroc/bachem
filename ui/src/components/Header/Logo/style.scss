@@ -6,19 +6,24 @@
   display: flex;
 
   .text {
-    color: $main-blue;
-    font-size: 1.1em;
+    a {
+      color: $main-blue;
+      font-size: 1.1em;
+      text-decoration: none;
+    }
 
     &:first-letter {
       background: $main-blue;
       color: $main-white;
-      padding-left: $space-primary;
+      padding-left: $space-secondary;
     }
   }
 
   &.reverse {
     .text {
-      color: $main-white;
+       a {
+        color: $main-white;
+      }
 
       &:first-letter {
         background: $main-white;

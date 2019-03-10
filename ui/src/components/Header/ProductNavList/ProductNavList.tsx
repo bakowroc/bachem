@@ -8,6 +8,7 @@ import * as headerStyle from '../style.scss';
 import * as style from './style.scss';
 import {ProductRoute} from "../../Product/ProductContent";
 import {appContext} from "../../../context/AppProvider";
+import {history} from "../../../history";
 
 export const PRODUCTS_ITEMS = [
   {display: 'Tabliczki znamionowe', href: ProductRoute.TABLICZKI_ZNAMIONOWE},
@@ -39,8 +40,11 @@ const ProductNavList = () => {
     <ul className={style.productList}>
       {items.map((item, key) =>
         <li key={key}>
-          <Link to={`/produkty/${item.href}`}>
-            <Icon name="arrow-forward-outline" className={style.icon}/>
+          <Link
+            to={`/produkty/${item.href}`}
+            className={`${history.location.pathname === "/produkty/" + item.href ? style.active : ''}`}
+          >
+            <Icon name="corner-down-right" className={style.icon}/>
             {item.display}
           </Link>
         </li>

@@ -34,7 +34,7 @@
   width: calc(#{$navigation-height} - 2 * #{$space-secondary});
 
   &:hover {
-    background: darken($main-gray, 10%);
+    background: rgba($dark-gray, .05);
   }
 
   svg {
@@ -49,10 +49,6 @@
 
     svg {
       fill: darken($main-gray, 5%);
-    }
-
-    &:hover {
-      background: lighten($main-gray, 2%);
     }
   }
 

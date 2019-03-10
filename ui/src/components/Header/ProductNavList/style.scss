@@ -22,6 +22,17 @@
   .header {
     height: $navigation-height;
     padding: $space-secondary;
+
+    .navIcon {
+
+      svg {
+        fill: $main-blue
+      }
+
+      &:hover {
+        background: $main-gray;
+      }
+    }
   }
 
   .productListNav {
@@ -43,8 +54,8 @@
           color: $dark-gray;
           display: flex;
           flex-direction: row;
-          font-size: .85em;
-          font-weight: 500;
+          font-size: .95em;
+          font-weight: 400;
           padding: $space-secondary + 5 $space-secondary;
           text-decoration: none;
 
@@ -61,7 +72,7 @@
             margin-right: $space-primary;
 
             svg {
-              fill: $dark-gray;
+              fill: darken($main-gray, 20);
               height: 20px;
               width: 20px;
             }

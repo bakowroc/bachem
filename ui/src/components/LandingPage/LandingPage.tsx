@@ -13,7 +13,7 @@ const company = {
 };
 
 const LandingPage = () => (
-  <div className={style.container}>
+  <div className={style.container} id="home">
     <LandingPageBackground />
     <main className={style.landingPage}>
       <div className={style.companyHeading}>
