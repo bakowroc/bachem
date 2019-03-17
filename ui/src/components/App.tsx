@@ -13,7 +13,6 @@ import {GalleryPopup} from "./Gallery/GalleryPopup";
 import {appContext} from "../context/AppProvider";
 import {SnackbarProvider} from "../context/SnackbarProvider";
 import {GalleryProvider} from "../context/GalleryProvider";
-import {TabsProvider} from "../context/TabsProvider";
 import {useEffect} from "react";
 
 const App = () => {
@@ -68,9 +67,7 @@ const App = () => {
           <div className={style.scrollable} ref={appRef} onScroll={onAppScroll} >
               <Route exact path="/" component={Home}/>
               <Route path="/produkty/:product" component={Product}/>
-              <TabsProvider>
-                <Route path="/metody/:method?" component={Methods}/>
-              </TabsProvider>
+              <Route path="/metody/:method?" component={Methods}/>
             <Footer />
           </div>
         </GalleryProvider>

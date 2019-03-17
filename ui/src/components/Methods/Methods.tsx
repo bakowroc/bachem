@@ -7,24 +7,8 @@ import {AnodizingData, DigestionData, EngravingData, LaserData, ScreenPrintingDa
 
 import * as globalStyle from '../../styles/global.scss';
 import * as style from './style.scss';
-import {tabsContext} from "../../context/TabsProvider";
-import {useEffect} from "react";
 
 const Methods = ({match}) => {
-  const tabs = React.useContext(tabsContext);
-
-  useEffect(() => {
-    tabs.setValue({
-      active: match.params.method,
-      body: {
-      "anodowanie": renderSingleMethod(AnodizingData),
-      "sitodruk": renderSingleMethod(ScreenPrintingData),
-      "trawienie": renderSingleMethod(DigestionData),
-      "grawerowanie": renderSingleMethod(EngravingData),
-      "ciecie-laserem": renderSingleMethod(LaserData)
-    }});
-  }, []);
-
   const renderFeatures = (features) => (
     <div className={style.features}>
       <ul className={style.featuresList}>
@@ -47,13 +31,24 @@ const Methods = ({match}) => {
     </div>
   );
 
+  const tabs = {
+    active: match.params.method,
+    body: {
+      "anodowanie": { heading: "Anodowanie", content: renderSingleMethod(AnodizingData) },
+      "sitodruk": { heading: "Sitodruk", content: renderSingleMethod(ScreenPrintingData) },
+      "trawienie": { heading: "Trawienie", content: renderSingleMethod(DigestionData) },
+      "grawerowanie": { heading: "Grawerowanie", content: renderSingleMethod(EngravingData) },
+      "ciecie-laserem": { heading: "Ciecie laserem", content: renderSingleMethod(LaserData) }
+    }
+  };
+
   return (
     <div className={style.container}>
       <section className={style.methods}>
         <header className={style.header}>
           <h1 className={globalStyle.pageHeading}>Metody wykonania</h1>
         </header>
-        <Tabs />
+        <Tabs { ...tabs }/>
       </section>
     </div>
   );

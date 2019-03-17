@@ -47,7 +47,7 @@ const Product = ({match }) => {
             {methods.map((method, key)=>
               <li key={key}>
                 <Icon className={style.icon} name="link-2-outline" />
-                <Link to={`/metody/${method.toLowerCase()}`}>{method}</Link>
+                <Link to={`/metody${method.href}`}>{method.name}</Link>
               </li>
             )}
           </ul>

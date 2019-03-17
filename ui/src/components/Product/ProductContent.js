@@ -26,60 +26,90 @@ export const productContent = {
 		heading: "Tabliczki znamionowe",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie']
+		methods: [
+			{name: 'Anodowanie', href: '/anodowanie'},
+			{name: 'Trawienie', href: '/trawienie'}
+		]
 	},
 	[ProductRoute.TABLICZKI_FIRMOWE]: {
 		heading: "Tabliczki firmowe",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-    methods: ['Anodowanie', 'Sitodruk']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.TABLICZKI_FABRYCZNE]: {
 		heading: "Tabliczki fabryczne",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Laser', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.PANELE_STEROWNICZE]: {
 		heading: "Panele sterownicze",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Ciecie laserem', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.TABLICE_CZOLOWE_MASZYN]: {
 		heading: "Tablice czolowe maszyn",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.SKALE_LINIALY_SCHEMATY]: {
 		heading: "Skale, linialy i schematy",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie', 'Sitodruk']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.TABLICZKI_ROZNE]: {
 		heading: "Tabliczki roznego typu",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie', 'Sitodruk', 'Grawerowanie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.TABLICE_INFORMACYJNE]: {
 		heading: "Tablice informacyjne",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.WYWIESZKI_ETYKIETY]: {
 		heading: "Wywieszki i etykiety",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	},
 	[ProductRoute.NUMERATORY]: {
 		heading: "Numeratory",
 		description: lorem({count: 10}),
 		photos: [tz1, tz2, tz3, tz4, tz5, tz6],
-		methods: ['Anodowanie', 'Trawienie']
+    methods: [
+      {name: 'Anodowanie', href: '/anodowanie'},
+      {name: 'Trawienie', href: '/trawienie'}
+    ]
 	}
 };
