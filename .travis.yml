@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - '10.15.3'
+before_install: cd ui && npm i -g yarn tslint typescript webpack sass-lint prettier
+install: yarn
+jobs:
+  include:
+  - stage: build
+    script:
+    - yarn build
+  - stage: lint
+    script:
+    - yarn lint

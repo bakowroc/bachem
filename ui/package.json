@@ -6,11 +6,11 @@
     "build": "webpack",
     "start": "webpack-dev-server",
     "lint:prettier:fix": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:sass": "sass-lint -c .sass-lint.yaml -v -q",
     "lint:sass:fix": "sass-lint-auto-fix -c .sass-lint-auto-fix.yaml",
     "lint:prettier": "prettier --list-different \"src/**/*.{ts,tsx}\"",
-    "lint": "yarn lint:prettier  && yarn lint:ts && yarn lint:sass",
+    "lint": "yarn lint:prettier && yarn lint:ts && yarn lint:sass",
     "lint:fix": "yarn lint:prettier:fix && yarn lint:ts --fix && yarn lint:sass:fix"
   },
   "author": "",

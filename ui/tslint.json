@@ -9,6 +9,7 @@
     "quotemark": [true, "single", "jsx-single"],
     "object-literal-key-quotes": [true, "as-needed"],
     "interface-name": [true, "never-prefix"],
-    "trailing-comma": false
+    "trailing-comma": false,
+    "no-unused-expression": true
   }
 }
