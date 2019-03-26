@@ -5,9 +5,13 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "prettier": "prettier --list-different",
-    "lint": "eslint ./src && sass-lint -v -c .sass-lint-yaml && prettier --list-different",
-    "lint:fix": "prettier --list-different && eslint ./src --fix && sass-lint-auto-fix"
+    "lint:prettier:fix": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}",
+    "lint:sass": "sass-lint -c .sass-lint.yaml -v -q",
+    "lint:sass:fix": "sass-lint-auto-fix -c .sass-lint-auto-fix.yaml",
+    "lint:prettier": "prettier --list-different \"src/**/*.{ts,tsx}\"",
+    "lint": "yarn lint:prettier  && yarn lint:ts && yarn lint:sass",
+    "lint:fix": "yarn lint:prettier:fix && yarn lint:ts --fix && yarn lint:sass:fix"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +19,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "eva-icons": "^1.1.1",
+    "history": "^4.9.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router": "^5.0.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
@@ -37,6 +43,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "tslint": "^5.13.1",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.3.3333",
     "url-loader": "^1.1.2",
     "webpack": "^4.26.1",

@@ -3,8 +3,8 @@ import './styles/global.scss';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {App} from "./components/App";
-import {AppProvider} from "./context/AppProvider";
+import { App } from './components/App';
+import { AppProvider } from './context/AppProvider';
 
 const AppWithProvider = (
   <AppProvider>
@@ -12,7 +12,4 @@ const AppWithProvider = (
   </AppProvider>
 );
 
-ReactDOM.render(
-  AppWithProvider,
-  document.getElementById('root')
-);
+ReactDOM.render(AppWithProvider, document.getElementById('root'));

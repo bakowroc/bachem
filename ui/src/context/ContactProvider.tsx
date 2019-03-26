@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 interface Form {
-  subject: string;
-  returningEmail: string;
   content: string;
+  returningEmail: string;
+  subject: string;
 }
 
 interface ContactValue {
@@ -13,24 +13,22 @@ interface ContactValue {
 
 const defaultValue = {
   data: {
-    subject: '',
+    content: '',
     returningEmail: '',
-    content: ''
+    subject: ''
   },
-  onSubmit: () => null,
+  onSubmit: () => null
 };
 
 export const contactContext = React.createContext<ContactValue>(defaultValue);
 
 export class ContactProvider extends React.Component<{}, ContactValue> {
-  state = {
+  public state = {
     ...defaultValue,
-    onSubmit: data => this.setState({data}),
+    onSubmit: data => this.setState({ data })
   };
 
-  render() {
-    return (
-      <contactContext.Provider value={this.state}>{this.props.children}</contactContext.Provider>
-    )
+  public render() {
+    return <contactContext.Provider value={this.state}>{this.props.children}</contactContext.Provider>;
   }
 }

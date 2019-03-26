@@ -1,32 +1,30 @@
 import * as React from 'react';
 
 interface AppValue {
-  isSidebarShown: boolean,
-  isSidebarLocked: boolean,
-  isScrolled: boolean;
   isInRoot: boolean;
+  isScrolled: boolean;
+  isSidebarLocked: boolean;
+  isSidebarShown: boolean;
   setValue: (value) => void;
 }
 
 const defaultValue = {
-  isSidebarShown: true,
-  isSidebarLocked: false,
-  isScrolled: false,
   isInRoot: true,
-  setValue: () => {}
+  isScrolled: false,
+  isSidebarLocked: false,
+  isSidebarShown: true,
+  setValue: () => null
 };
 
 export const appContext = React.createContext<AppValue>(defaultValue);
 
 export class AppProvider extends React.Component<{}, AppValue> {
-  state = {
+  public state = {
     ...defaultValue,
-    setValue: value => this.setState({...value})
+    setValue: value => this.setState({ ...value })
   };
 
-  render() {
-    return (
-      <appContext.Provider value={this.state}>{this.props.children}</appContext.Provider>
-    )
+  public render() {
+    return <appContext.Provider value={this.state}>{this.props.children}</appContext.Provider>;
   }
 }

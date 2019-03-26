@@ -52,7 +52,7 @@
   width: $width;
 }
 
-@mixin container() {
+@mixin container {
   display: flex;
   justify-content: center;
   overflow-x: hidden;

@@ -1,26 +1,26 @@
-import * as React from 'react';
 import * as eva from 'eva-icons';
+import * as React from 'react';
 
 interface IconProps {
   name: string;
-  className? : string;
+  className?: string;
   onClick?: () => void;
 }
 
-const Icon = ({name, className = '', onClick = undefined}: IconProps) => {
+const Icon = ({ name, className = '', onClick }: IconProps) => {
   const getSvg = () => {
     try {
       return eva.icons[name];
-    } catch(err) {
-      return eva.icons['github'];
+    } catch (err) {
+      return eva.icons.github;
     }
   };
 
-  const {attrs, contents} = getSvg();
+  const { attrs, contents } = getSvg();
   return (
-   <i className={className} onClick={onClick}>
-     <svg {...attrs} dangerouslySetInnerHTML={{__html: contents}} />
-   </i>
+    <i className={className} onClick={onClick}>
+      <svg {...attrs} dangerouslySetInnerHTML={{ __html: contents }} />
+    </i>
   );
 };
 

@@ -8,14 +8,14 @@ interface PaperProps {
   round?: number;
 }
 
-const Paper = ({className= '', children, depth = 0, round = 0}: PaperProps) => {
+const Paper = ({ className = '', children, depth = 0, round = 0 }: PaperProps) => {
   const depthClass = `paper-${depth}`;
 
-  return(
-    <div className={`${style[depthClass]} ${className}`} style={{borderRadius: `${round}px`}}>
+  return (
+    <div className={`${style[depthClass]} ${className}`} style={{ borderRadius: `${round}px` }}>
       {children}
     </div>
   );
 };
 
-export {Paper};
+export { Paper };

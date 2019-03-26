@@ -1,6 +1,6 @@
-@import "../../styles/colors";
-@import "../../styles/mixins";
-@import "../../styles/sizes";
+@import '../../styles/colors';
+@import '../../styles/mixins';
+@import '../../styles/sizes';
 
 .gallery {
   position: static;
@@ -9,8 +9,8 @@
     display: inline-block;
 
     .photo {
-      float: left;
       background: radial-gradient($main-white, $main-blue);
+      float: left;
       height: 200px;
       margin-bottom: $space-primary;
       margin-right: $space-primary;
@@ -40,13 +40,13 @@
   @include flex-common;
   @include container;
   bottom: 0;
+  height: 100vh;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 6;
   width: 100vw;
-  height: 100vh;
+  z-index: 6;
 
   &.show {
     @include fade-in(.2);
@@ -55,8 +55,8 @@
   .content {
     @include flex-common($direction: row);
     position: relative;
-    z-index: 4;
     width: auto;
+    z-index: 4;
 
     .img {
       overflow: hidden;
@@ -64,11 +64,11 @@
     }
 
     .arrow {
-      display: flex;
-      position: fixed;
       background: $main-white;
       border-radius: $full-radius;
+      display: flex;
       padding: $space-primary;
+      position: fixed;
 
       &.back {
         left: $space-primary * 3;
@@ -79,13 +79,13 @@
       }
 
       &:hover {
-        cursor: pointer;
         background: rgba($main-white, .8);
+        cursor: pointer;
       }
 
       svg {
-        height: 32px;
         fill: $dark-gray;
+        height: 32px;
         width: 32px;
       }
     }
@@ -93,13 +93,13 @@
 
   .blockLayer {
     background: rgba($main-blue, .5);
-    height: 100vh;
-    position: absolute;
     bottom: 0;
+    height: 100vh;
     left: 0;
+    position: absolute;
     right: 0;
     top: 0;
-    z-index: 3;
     width: 100vw;
+    z-index: 3;
   }
 }

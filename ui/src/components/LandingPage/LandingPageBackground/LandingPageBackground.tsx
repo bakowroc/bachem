@@ -12,4 +12,4 @@ const LandingPageBackground = () => (
   </div>
 );
 
-export {LandingPageBackground};
+export { LandingPageBackground };

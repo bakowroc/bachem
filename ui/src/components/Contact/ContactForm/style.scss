@@ -1,5 +1,5 @@
-@import "../../../styles/colors";
-@import "../../../styles/sizes";
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
 
 .container {
   background: $main-white;
@@ -16,7 +16,8 @@
       margin-bottom: $space-secondary;
     }
 
-    .input, .textarea {
+    .input,
+    .textarea {
       background: $main-white;
       border: 2px solid darken($main-gray, 5%);
       border-radius: $primary-radius;
@@ -39,7 +40,7 @@
       width: 250px;
 
       &.success {
-       background: $green;
+        background: $green;
       }
 
       .icon {

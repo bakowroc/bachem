@@ -1,32 +1,31 @@
 import * as React from 'react';
 
 interface SnackbarValue {
-  value: string;
   isShown: boolean;
   setValue: (value) => void;
+  value: string;
 }
 
 const defaultValue = {
-  value: '',
   isShown: false,
-  setValue: () => {}
+  setValue: () => null,
+  value: ''
 };
 
 export const snackbarContext = React.createContext<SnackbarValue>(defaultValue);
 
 export class SnackbarProvider extends React.Component<{}, SnackbarValue> {
-  timeout;
-  state = {
+  public timeout;
+  public state = {
     ...defaultValue,
-    setValue: value => this.setState({...value}, () => {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(() =>  this.setState({isShown: false}), 3000);
-    }),
+    setValue: value =>
+      this.setState({ ...value }, () => {
+        clearTimeout(this.timeout);
+        this.timeout = setTimeout(() => this.setState({ isShown: false }), 3000);
+      })
   };
 
-  render() {
-    return (
-      <snackbarContext.Provider value={this.state}>{this.props.children}</snackbarContext.Provider>
-    )
+  public render() {
+    return <snackbarContext.Provider value={this.state}>{this.props.children}</snackbarContext.Provider>;
   }
 }

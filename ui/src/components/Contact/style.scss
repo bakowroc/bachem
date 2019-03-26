@@ -7,42 +7,42 @@
   background: $main-white;
   padding: $space-primary $space-primary * 4;
 
-.contact {
-  @include flex-common($align-items: flex-start, $justify-content: space-between);
-  padding: $space-primary;
-  width: $main-content-width;
+  .contact {
+    @include flex-common($align-items: flex-start, $justify-content: space-between);
+    padding: $space-primary;
+    width: $main-content-width;
 
-  .info {
-    @include flex-common($justify-content: space-between, $direction: row);
+    .info {
+      @include flex-common($justify-content: space-between, $direction: row);
 
-    .content {
-      background: lighten($main-gray, 2.5);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: space-around;
-      padding: $space-primary * 2;
-      width: 350px;
+      .content {
+        background: lighten($main-gray, 2.5);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        padding: $space-primary * 2;
+        width: 350px;
 
-      .contentSection {
-        .title {
-          color: $light-blue;
-          font-size: 1.1em;
-          text-transform: lowercase;
-          font-weight: 500;
-          margin-bottom: $space-primary;
-        }
+        .contentSection {
+          .title {
+            color: $light-blue;
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: $space-primary;
+            text-transform: lowercase;
+          }
 
-        .text {
-          color: darken($main-gray, 30);
-          margin-bottom: $space-secondary;
+          .text {
+            color: darken($main-gray, 30);
+            margin-bottom: $space-secondary;
+          }
         }
       }
-    }
 
-    .contactForm {
-      padding: $space-primary * 2;
+      .contactForm {
+        padding: $space-primary * 2;
+      }
     }
-  }
   }
 }

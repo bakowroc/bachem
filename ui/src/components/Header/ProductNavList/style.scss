@@ -1,5 +1,5 @@
-@import "../../../styles/colors";
-@import "../../../styles/sizes";
+@import '../../../styles/colors';
+@import '../../../styles/sizes';
 
 .container {
   background: $main-white;
@@ -26,7 +26,7 @@
     .navIcon {
 
       svg {
-        fill: $main-blue
+        fill: $main-blue;
       }
 
       &:hover {
@@ -59,7 +59,8 @@
           padding: $space-secondary + 5 $space-secondary;
           text-decoration: none;
 
-          &:hover, &.active {
+          &:hover,
+          &.active {
             background: $main-gray;
             border-radius: $primary-radius;
           }

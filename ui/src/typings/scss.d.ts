@@ -1,4 +1,4 @@
-declare module '*.scss'{
+declare module '*.scss' {
   const value: any;
-  export = value
+  export = value;
 }

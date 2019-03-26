@@ -1,0 +1,14 @@
+{
+  "extends": ["tslint:latest", "tslint-react"],
+  "rules": {
+    // override tslint-react rules here
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "jsx-wrap-multiline": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "quotemark": [true, "single", "jsx-single"],
+    "object-literal-key-quotes": [true, "as-needed"],
+    "interface-name": [true, "never-prefix"],
+    "trailing-comma": false
+  }
+}

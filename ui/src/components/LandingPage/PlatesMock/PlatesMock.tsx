@@ -1,9 +1,8 @@
 import * as React from 'react';
+import { Paper } from '../../Paper/Paper';
 import * as style from './style.scss';
-import {Paper} from "../../Paper/Paper";
 
 const PlatesMock = () => {
-
   const renderMockContent = () => (
     <div>
       <div className={style.plateMock} />
@@ -21,4 +20,4 @@ const PlatesMock = () => {
   );
 };
 
-export {PlatesMock}
+export { PlatesMock };

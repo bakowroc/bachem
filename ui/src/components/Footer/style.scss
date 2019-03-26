@@ -16,8 +16,8 @@
     .infoBox {
       @include flex-common;
       padding: 0 $space-primary;
-      width: auto;
       text-align: right;
+      width: auto;
 
       &:last-child {
         border-left: 1px solid darken($main-gray, 10%);

@@ -12,7 +12,7 @@
       text-decoration: none;
     }
 
-    &:first-letter {
+    &::first-letter {
       background: $main-blue;
       color: $main-white;
       padding-left: $space-secondary;
@@ -21,11 +21,11 @@
 
   &.reverse {
     .text {
-       a {
+      a {
         color: $main-white;
       }
 
-      &:first-letter {
+      &::first-letter {
         background: $main-white;
         color: $main-blue;
       }

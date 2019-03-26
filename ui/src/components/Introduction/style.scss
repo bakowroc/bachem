@@ -1,13 +1,13 @@
-@import "../../styles/colors";
-@import "../../styles/sizes";
-@import "../../styles/mixins";
+@import '../../styles/colors';
+@import '../../styles/sizes';
+@import '../../styles/mixins';
 
 .container {
   @include container;
   align-items: center;
   background: $main-white;
-  padding: $space-primary $space-primary * 4;
   border-bottom: $navigation-height solid $main-gray;
+  padding: $space-primary $space-primary * 4;
 
   .introduction {
     padding: $space-primary;

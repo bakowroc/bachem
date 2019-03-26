@@ -1,15 +1,14 @@
 import axios from 'axios';
 import * as React from 'react';
 
-import {Paper} from "../Paper/Paper";
-import {ContactForm} from "./ContactForm/ContactForm";
-
+import { Paper } from '../Paper/Paper';
+import { ContactForm } from './ContactForm/ContactForm';
 
 import * as globalStyle from '../../styles/global.scss';
 import * as style from './style.scss';
 
-export const Contact = () =>  (
-  <div className={style.container} id="contact">
+export const Contact = () => (
+  <div className={style.container} id='contact'>
     <section className={style.contact}>
       <h3 className={globalStyle.pageHeading}>Kontakt</h3>
       <div className={style.info}>

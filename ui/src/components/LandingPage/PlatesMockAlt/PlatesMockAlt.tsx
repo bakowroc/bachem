@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { Paper } from '../../Paper/Paper';
 import * as style from './style.scss';
-import {Paper} from "../../Paper/Paper";
 
 const NUMBER_OF_PLATES = 5;
 
-export const PlatesMockAlt = ({isScrolled}) => {
+export const PlatesMockAlt = ({ isScrolled }) => {
   const renderMock = () => <Paper className={style.plate} round={0} depth={5} children={null} />;
 
   return (

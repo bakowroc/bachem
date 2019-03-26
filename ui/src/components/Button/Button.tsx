@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {history} from '../../history';
+import { history } from '../../history';
 
 import * as style from './style.scss';
 
@@ -11,20 +11,20 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = ({onClick = undefined, text, outline = false, href = undefined, className = ''}: ButtonProps) => {
+const Button = ({ onClick, text, outline = false, href, className = '' }: ButtonProps) => {
   const getOnClickAction = () => {
-   if(href !== undefined) {
-     return () => history.push(href)
-   }
+    if (href !== undefined) {
+      return () => history.push(href);
+    }
 
-   return onClick;
+    return onClick;
   };
 
   return (
-   <button onClick={getOnClickAction()} className={`${style.button} ${className} ${outline ? style.outline: ''}`}>
-     {text}
-   </button>
-  )
+    <button onClick={getOnClickAction()} className={`${style.button} ${className} ${outline ? style.outline : ''}`}>
+      {text}
+    </button>
+  );
 };
 
-export {Button};
+export { Button };

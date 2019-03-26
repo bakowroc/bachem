@@ -1,25 +1,25 @@
 import * as React from 'react';
-import {Router, Route} from 'react-router';
-import {history} from '../history';
-import {Header} from "./Header/Header";
-import {Home} from "./Home/Home";
-import {Product} from "./Product/Product";
-import {Footer} from "./Footer/Footer";
 
+import { Route, Router } from 'react-router';
+import { history } from '../history';
+import { Footer } from './Footer/Footer';
+import { Header } from './Header/Header';
+import { Home } from './Home/Home';
+import { Product } from './Product/Product';
+
+import { appContext } from '../context/AppProvider';
+import { GalleryProvider } from '../context/GalleryProvider';
+import { SnackbarProvider } from '../context/SnackbarProvider';
 import * as style from './app.scss';
-import {Snackbar} from "./Snackbar/Snackbar";
-import {Methods} from "./Methods/Methods";
-import {GalleryPopup} from "./Gallery/GalleryPopup";
-import {appContext} from "../context/AppProvider";
-import {SnackbarProvider} from "../context/SnackbarProvider";
-import {GalleryProvider} from "../context/GalleryProvider";
-import {useEffect} from "react";
+import { GalleryPopup } from './Gallery/GalleryPopup';
+import { Methods } from './Methods/Methods';
+import { Snackbar } from './Snackbar/Snackbar';
 
 const App = () => {
   const appRef = React.useRef(document.createElement('div'));
   const app = React.useContext(appContext);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setupApp();
     scrollToView();
 
@@ -31,7 +31,7 @@ const App = () => {
 
   const setupApp = () => {
     app.setValue({
-      isInRoot: history.location.pathname === "/"
+      isInRoot: history.location.pathname === '/'
     });
   };
 
@@ -40,19 +40,21 @@ const App = () => {
     let section;
 
     try {
-     section = document.getElementById(hash.replace('#', ''));
-      section.scrollIntoView({ block: 'start',  behavior: 'smooth' });
-    } catch(e) {
+      section = document.getElementById(hash.replace('#', ''));
+      section.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    } catch (e) {
       appRef.current.scrollTop = 0;
     }
   };
 
   const onAppScroll = () => {
     const isScrolled = appRef.current.scrollTop !== 0;
-    if(isScrolled !== app.isScrolled) {
+    if (isScrolled !== app.isScrolled) {
       app.setValue({
         isScrolled,
-        isSidebarShown: !isScrolled || ['metody', 'produkty'].map(route => history.location.pathname.includes(route)).indexOf(true) > -1
+        isSidebarShown:
+          !isScrolled ||
+          ['metody', 'produkty'].map(route => history.location.pathname.includes(route)).indexOf(true) > -1
       });
     }
   };
@@ -63,11 +65,11 @@ const App = () => {
         <GalleryProvider>
           <GalleryPopup />
           <Snackbar />
-          <Header/>
-          <div className={style.scrollable} ref={appRef} onScroll={onAppScroll} >
-              <Route exact path="/" component={Home}/>
-              <Route path="/produkty/:product" component={Product}/>
-              <Route path="/metody/:method?" component={Methods}/>
+          <Header />
+          <div className={style.scrollable} ref={appRef} onScroll={onAppScroll}>
+            <Route exact={true} path='/' component={Home} />
+            <Route path='/produkty/:product' component={Product} />
+            <Route path='/metody/:method?' component={Methods} />
             <Footer />
           </div>
         </GalleryProvider>
@@ -76,4 +78,4 @@ const App = () => {
   );
 };
 
-export {App};
+export { App };

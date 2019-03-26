@@ -1,5 +1,5 @@
-@import "colors";
-@import "sizes";
+@import 'colors';
+@import 'sizes';
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,8 @@
   padding: 0;
 }
 
-html, body {
+body,
+html {
   overflow: hidden;
 }
 
@@ -21,25 +22,25 @@ body {
   color: $darken-gray;
   font-size: 1.2em;
   font-weight: 600;
+  margin-bottom: $space-primary * 2;
   padding-bottom: $space-secondary;
   position: relative;
   width: 250px;
-  margin-bottom: $space-primary * 2;
 
   &::after {
-    content: '';
-    width: 100%;
     background: linear-gradient(
-                    to right,
-                    $light-blue 0%,
-                    $light-blue 25%,
-                    $main-gray 25%,
-                    $main-gray 100%
+      to right,
+      $light-blue 0%,
+      $light-blue 25%,
+      $main-gray 25%,
+      $main-gray 100%
     );
+    content: '';
     height: 2px;
-    position: absolute;
     left: 0;
+    position: absolute;
     top: 30px;
+    width: 100%;
     z-index: 1;
   }
 }

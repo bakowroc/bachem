@@ -1,24 +1,24 @@
 import * as React from 'react';
-import {Paper} from "../Paper/Paper";
+import { Paper } from '../Paper/Paper';
+
+import { galleryContext, Photo } from '../../context/GalleryProvider';
+import { GalleryPopup } from './GalleryPopup';
 
 import * as style from './style.scss';
-import {GalleryPopup} from "./GalleryPopup";
-import {galleryContext, Photo} from "../../context/GalleryProvider";
-import {useEffect} from "react";
 
 interface GalleryProps {
   className?: string;
-  photos: Array<Photo>
+  photos: Photo[];
 }
 
-const Gallery = ({className = '', photos}: GalleryProps) => {
+const Gallery = ({ className = '', photos }: GalleryProps) => {
   const gallery = React.useContext(galleryContext);
 
-  useEffect(() => {
+  React.useEffect(() => {
     gallery.setPhotos(photos);
   });
 
-  const onPreview = (photo) => {
+  const onPreview = photo => {
     gallery.setActive(photo);
     gallery.togglePopup();
   };
@@ -29,12 +29,12 @@ const Gallery = ({className = '', photos}: GalleryProps) => {
       <div className={`${style.photos} ${className}`}>
         {gallery.photos.map((photo, key) => (
           <Paper key={key} depth={1} round={4} className={style.photo}>
-            <img onClick={() => onPreview({...photo, key})} src={photo.src} />
-          </Paper>)
-        )}
+            <img onClick={() => onPreview({ ...photo, key })} src={photo.src} />
+          </Paper>
+        ))}
       </div>
     </section>
   );
 };
 
-export {Gallery};
+export { Gallery };
