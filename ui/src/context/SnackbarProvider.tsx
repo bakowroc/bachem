@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface SnackbarValue {
+interface ISnackbarValue {
   isShown: boolean;
   setValue: (value) => void;
   value: string;
@@ -12,9 +12,9 @@ const defaultValue = {
   value: ''
 };
 
-export const snackbarContext = React.createContext<SnackbarValue>(defaultValue);
+export const snackbarContext = React.createContext<ISnackbarValue>(defaultValue);
 
-export class SnackbarProvider extends React.Component<{}, SnackbarValue> {
+export class SnackbarProvider extends React.Component<{}, ISnackbarValue> {
   public timeout;
   public state = {
     ...defaultValue,

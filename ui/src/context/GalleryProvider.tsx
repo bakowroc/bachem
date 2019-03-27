@@ -1,23 +1,25 @@
 import * as React from 'react';
 
-export interface Photo {
-  src: string;
+export interface IPhoto {
+  imgsrc: string;
   key: number;
+  name: string;
 }
 
-interface GalleryValue {
-  active: Photo;
+interface IGalleryValue {
+  active: IPhoto;
   isPopupShown: boolean;
-  photos: Photo[];
-  setActive: (photo: Photo) => void;
-  setPhotos: (photos: Photo[]) => void;
+  photos: IPhoto[];
+  setActive: (photo: IPhoto) => void;
+  setPhotos: (photos: IPhoto[]) => void;
   togglePopup: () => void;
 }
 
 const defaultValue = {
   active: {
+    imgsrc: '',
     key: 0,
-    src: ''
+    name: ''
   },
   isPopupShown: false,
   photos: [],
@@ -26,9 +28,9 @@ const defaultValue = {
   togglePopup: () => null
 };
 
-export const galleryContext = React.createContext<GalleryValue>(defaultValue);
+export const galleryContext = React.createContext<IGalleryValue>(defaultValue);
 
-export class GalleryProvider extends React.Component<{}, GalleryValue> {
+export class GalleryProvider extends React.Component<{}, IGalleryValue> {
   public state = {
     ...defaultValue,
     setActive: active => this.setState({ active }),

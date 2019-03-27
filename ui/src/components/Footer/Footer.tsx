@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { PRODUCTS_ITEMS } from '../Header/ProductNavList/ProductNavList';
 import * as style from './style.scss';
 
 const COMPANY_ITEMS = [
@@ -31,7 +30,7 @@ const Footer = () => {
     <div className={style.container}>
       <footer className={style.footer}>
         <div className={style.infoBox}>{renderFastNav(COMPANY_ITEMS, 'Firma')}</div>
-        <div className={style.infoBox}>{renderFastNav(PRODUCTS_ITEMS, 'Produkty', 'produkty')}</div>
+        {/*<div className={style.infoBox}>{renderFastNav(PRODUCTS_ITEMS, 'Produkty', 'produkty')}</div>*/}
       </footer>
       <div className={style.copyright}>Copyright © bachem 2019. All rights reserved.</div>
     </div>

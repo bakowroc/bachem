@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface AppValue {
+interface IAppValue {
   isInRoot: boolean;
   isScrolled: boolean;
   isSidebarLocked: boolean;
@@ -16,9 +16,9 @@ const defaultValue = {
   setValue: () => null
 };
 
-export const appContext = React.createContext<AppValue>(defaultValue);
+export const appContext = React.createContext<IAppValue>(defaultValue);
 
-export class AppProvider extends React.Component<{}, AppValue> {
+export class AppProvider extends React.Component<{}, IAppValue> {
   public state = {
     ...defaultValue,
     setValue: value => this.setState({ ...value })

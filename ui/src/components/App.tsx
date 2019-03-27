@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Route, Router } from 'react-router';
-import { history } from '../history';
+import { Route, Router, Switch } from 'react-router-dom';
+import { history } from '../lib/history';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { Home } from './Home/Home';
@@ -67,9 +67,11 @@ const App = () => {
           <Snackbar />
           <Header />
           <div className={style.scrollable} ref={appRef} onScroll={onAppScroll}>
-            <Route exact={true} path='/' component={Home} />
-            <Route path='/produkty/:product' component={Product} />
-            <Route path='/metody/:method?' component={Methods} />
+            <Switch>
+              <Route exact={true} path='/' component={Home} />
+              <Route path='/produkty/:product' component={Product} />
+              <Route path='/metody/:method?' component={Methods} />
+            </Switch>
             <Footer />
           </div>
         </GalleryProvider>

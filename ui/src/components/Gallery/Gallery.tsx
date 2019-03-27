@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Paper } from '../Paper/Paper';
 
-import { galleryContext, Photo } from '../../context/GalleryProvider';
+import { galleryContext, IPhoto } from '../../context/GalleryProvider';
 import { GalleryPopup } from './GalleryPopup';
 
 import * as style from './style.scss';
 
-interface GalleryProps {
+interface IGalleryProps {
   className?: string;
-  photos: Photo[];
+  photos: IPhoto[];
 }
 
-const Gallery = ({ className = '', photos }: GalleryProps) => {
+const Gallery = ({ className = '', photos }: IGalleryProps) => {
   const gallery = React.useContext(galleryContext);
 
   React.useEffect(() => {
@@ -29,7 +29,7 @@ const Gallery = ({ className = '', photos }: GalleryProps) => {
       <div className={`${style.photos} ${className}`}>
         {gallery.photos.map((photo, key) => (
           <Paper key={key} depth={1} round={4} className={style.photo}>
-            <img onClick={() => onPreview({ ...photo, key })} src={photo.src} />
+            <img onClick={() => onPreview({ ...photo, key })} src={photo.imgsrc} />
           </Paper>
         ))}
       </div>

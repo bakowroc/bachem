@@ -31,7 +31,7 @@ const GalleryPopup = () => {
           <Icon className={`${style.arrow} ${style.back}`} name='arrow-back-outline' onClick={() => navigate('b')} />
         )}
         <Paper depth={3} round={2} className={style.img}>
-          <img src={gallery.active.src} />
+          <img src={gallery.active.imgsrc} />
         </Paper>
         {gallery.active.key < gallery.photos.length - 1 && (
           <Icon

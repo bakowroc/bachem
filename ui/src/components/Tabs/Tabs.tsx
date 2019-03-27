@@ -1,16 +1,16 @@
 import * as React from 'react';
 
 import { Button } from '../Button/Button';
-
 import { Paper } from '../Paper/Paper';
+
 import * as style from './style.scss';
 
-export interface TabsProps {
+export interface ITabsProps {
   active: string;
   body: any;
 }
 
-const Tabs = (tabs: TabsProps) => {
+const Tabs = (tabs: ITabsProps) => {
   const [active, setActive] = React.useState<string>('');
   const keys = Object.keys(tabs.body);
 
@@ -20,7 +20,7 @@ const Tabs = (tabs: TabsProps) => {
     } else {
       setActive(keys[0]);
     }
-  }, []);
+  }, [tabs]);
 
   const handleTabSwitch = tab => setActive(tab);
   const renderSwitch = (tab, key) => (
@@ -28,7 +28,7 @@ const Tabs = (tabs: TabsProps) => {
       key={key}
       outline={false}
       onClick={() => handleTabSwitch(key)}
-      text={tab.heading}
+      text={tab.name}
       className={`${style.tab} ${active === key ? style.active : ''}`}
     />
   );

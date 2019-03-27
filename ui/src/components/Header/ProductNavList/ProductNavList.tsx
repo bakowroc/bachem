@@ -5,26 +5,32 @@ import { Icon } from '../../Icon/Icon';
 import { Paper } from '../../Paper/Paper';
 
 import { appContext } from '../../../context/AppProvider';
-import { history } from '../../../history';
-import { ProductRoute } from '../../Product/ProductContent';
+import { client } from '../../../lib/ApolloClient';
+import { history } from '../../../lib/history';
+import { IProduct } from '../../Product/Product';
 import * as headerStyle from '../style.scss';
+import { GET_PRODUCTS_QUERY } from './query';
 import * as style from './style.scss';
 
-export const PRODUCTS_ITEMS = [
-  { display: 'Tabliczki znamionowe', href: ProductRoute.TABLICZKI_ZNAMIONOWE },
-  { display: 'Tabliczki firmowe', href: ProductRoute.TABLICZKI_FIRMOWE },
-  { display: 'Tabliczki fabryczne', href: ProductRoute.TABLICZKI_FABRYCZNE },
-  { display: 'Panele sterownicze', href: ProductRoute.PANELE_STEROWNICZE },
-  { display: 'Tablice czołowe maszyn', href: ProductRoute.TABLICE_CZOLOWE_MASZYN },
-  { display: 'Skale, liniały, schematy', href: ProductRoute.SKALE_LINIALY_SCHEMATY },
-  { display: 'Tabliczki różnego typu', href: ProductRoute.TABLICZKI_ROZNE },
-  { display: 'Tablice informacyjne', href: ProductRoute.TABLICE_INFORMACYJNE },
-  { display: 'Wywieszki i etykiety', href: ProductRoute.WYWIESZKI_ETYKIETY },
-  { display: 'Numeratory', href: ProductRoute.NUMERATORY }
-];
-
 const ProductNavList = () => {
+  const [products, setProducts] = React.useState<IProduct[]>([]);
   const app = React.useContext(appContext);
+
+  const getProducts = async () => {
+    try {
+      const result = await client.query({
+        query: GET_PRODUCTS_QUERY
+      });
+
+      setProducts(result.data.products);
+    } catch (e) {
+      return;
+    }
+  };
+
+  React.useEffect(() => {
+    getProducts();
+  }, []);
 
   const renderHeader = () => (
     <header className={style.header}>
@@ -36,26 +42,24 @@ const ProductNavList = () => {
     </header>
   );
 
-  const renderList = (heading, items) => (
-    <ul className={style.productList}>
-      {items.map((item, key) => (
-        <li key={key}>
-          <Link
-            to={`/produkty/${item.href}`}
-            className={`${history.location.pathname === '/produkty/' + item.href ? style.active : ''}`}
-          >
-            <Icon name='corner-down-right' className={style.icon} />
-            {item.display}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-
   return (
     <Paper depth={5} className={`${style.container} ${app.isSidebarShown ? style.show : ''}`}>
       {renderHeader()}
-      <nav className={style.productListNav}>{renderList('Produkty', PRODUCTS_ITEMS)}</nav>
+      <nav className={style.productListNav}>
+        <ul className={style.productList}>
+          {products.map((product, key) => (
+            <li key={key}>
+              <Link
+                to={`/produkty/${product.key}`}
+                className={`${history.location.pathname === '/produkty/' + product.key ? style.active : ''}`}
+              >
+                <Icon name='corner-down-right' className={style.icon} />
+                {product.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </Paper>
   );
 };
